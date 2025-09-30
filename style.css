@@ -338,6 +338,8 @@ img {
   display: grid;
   gap: 1.3rem;
   margin-bottom: 2.5rem;
+  padding: 1.75rem;
+  border-radius: 29px;
 }
 
 .section-heading {
