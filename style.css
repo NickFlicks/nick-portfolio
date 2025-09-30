@@ -109,6 +109,10 @@ img {
     color 0.3s ease;
 }
 
+a.button.button-primary {
+    padding: 0.9rem 0.95rem;
+}
+
 .button-primary {
   background: var(--primary);
   color: var(--primary-foreground);
