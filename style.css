@@ -1,3 +1,4 @@
+<style>
 :root {
   --background: hsl(32, 45%, 92%);
   --foreground: hsl(17, 36%, 16%);
@@ -707,3 +708,4 @@ header {
     align-items: flex-start;
   }
 }
+</style>
