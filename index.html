@@ -246,60 +246,162 @@
         margin-bottom: 2rem;
       }
 
+      .about + .about {
+        margin-top: 1rem;
+      }
+
       .about {
         max-width: 68ch;
         font-size: 1.05rem;
         color: var(--muted);
       }
 
-      /* Experience */
-      .jobs {
+      /* Experience timeline */
+      .timeline {
+        position: relative;
+        list-style: none;
+        margin: 0;
+        padding: 0;
         display: grid;
-        gap: 2.5rem;
+        gap: 2rem;
       }
 
-      .job {
-        display: grid;
-        grid-template-columns: 9.5rem 1fr;
-        gap: 1.5rem;
+      .timeline::before {
+        content: "";
+        position: absolute;
+        top: 0.5rem;
+        bottom: 1.25rem;
+        left: 50%;
+        width: 2px;
+        transform: translateX(-50%);
+        background: var(--border);
       }
 
-      .job .dates {
-        font-size: 0.875rem;
-        color: var(--subtle);
-        padding-top: 0.2rem;
+      .tl-item {
+        position: relative;
+        display: grid;
+        grid-template-columns: 1fr 3rem 1fr;
+        align-items: start;
+      }
+
+      .tl-dot {
+        grid-column: 2;
+        grid-row: 1;
+        justify-self: center;
+        width: 14px;
+        height: 14px;
+        margin-top: 0.35rem;
+        border-radius: 50%;
+        background: var(--bg);
+        border: 3px solid var(--accent);
+        box-shadow: 0 0 0 4px var(--bg);
+      }
+
+      .tl-item.is-current .tl-dot {
+        background: var(--accent);
+      }
+
+      .tl-date {
+        grid-row: 1;
+        margin: 0 0 0.6rem;
+        font-weight: 600;
+        font-size: 0.95rem;
+        color: var(--accent);
         font-variant-numeric: tabular-nums;
       }
 
-      .job h3 {
-        font-size: 1.1rem;
+      .tl-card {
+        grid-row: 2;
+        padding: 1.25rem 1.4rem;
+        border: 1px solid var(--border);
+        border-radius: var(--radius);
+        background: var(--surface);
+      }
+
+      .tl-item:nth-child(odd) .tl-date,
+      .tl-item:nth-child(odd) .tl-card {
+        grid-column: 3;
+      }
+
+      .tl-item:nth-child(even) .tl-date {
+        grid-column: 1;
+        text-align: right;
+      }
+
+      .tl-item:nth-child(even) .tl-card {
+        grid-column: 1;
+      }
+
+      .tl-card h3 {
+        font-size: 1.05rem;
         font-weight: 600;
       }
 
-      .job .company {
-        color: var(--accent);
-        font-weight: 500;
-        font-size: 0.95rem;
+      .tl-card .company {
+        color: var(--muted);
+        font-size: 0.925rem;
+        margin-top: 0.15rem;
       }
 
-      .job ul {
+      .tl-card ul {
         margin: 0.75rem 0 0;
         padding-left: 1.1rem;
         color: var(--muted);
+        font-size: 0.95rem;
       }
 
-      .job li + li {
-        margin-top: 0.35rem;
+      .tl-card li + li {
+        margin-top: 0.3rem;
       }
 
-      .job li::marker {
+      .tl-card li::marker {
         color: var(--subtle);
       }
 
-      @media (max-width: 640px) {
-        .job {
-          grid-template-columns: 1fr;
-          gap: 0.25rem;
+      .tl-start {
+        position: relative;
+        justify-self: center;
+        padding: 0.4rem 1rem;
+        border-radius: 999px;
+        background: var(--accent-soft);
+        color: var(--text);
+        font-size: 0.875rem;
+        font-weight: 600;
+      }
+
+      @media (min-width: 721px) {
+        .tl-item + .tl-item {
+          margin-top: -5rem;
+        }
+
+        .tl-start {
+          margin-top: 0.5rem;
+        }
+      }
+
+      @media (max-width: 720px) {
+        .timeline::before {
+          left: 7px;
+          transform: none;
+        }
+
+        .tl-item {
+          grid-template-columns: 2.25rem 1fr;
+        }
+
+        .tl-dot {
+          grid-column: 1;
+          justify-self: start;
+        }
+
+        .tl-item:nth-child(n) .tl-date,
+        .tl-item:nth-child(n) .tl-card {
+          grid-column: 2;
+          text-align: left;
+        }
+
+        .tl-start {
+          justify-self: start;
         }
       }
 
@@ -356,10 +458,6 @@
       .card p {
         color: var(--muted);
         margin-top: 0.35rem;
-      }
-
-      .focus-grid {
-        grid-template-columns: repeat(auto-fit, minmax(320px, 1fr));
       }
 
       .card p + p {
@@ -436,13 +534,13 @@
 
     <main id="top" class="wrap">
       <div class="hero">
-        <p class="eyebrow">Nairobi, Kenya · Remote</p>
+        <p class="eyebrow">Nairobi, Kenya · In support since 2016</p>
         <h1>Nick Ndirangu Macharia</h1>
         <p class="role">Technical &amp; Customer Support Specialist</p>
         <p class="lead">
-          7+ years supporting Shopify merchants. I work through theme, app and
-          integration problems until I find the cause, fix what I can, and give
-          developers clear bug reports for the rest.
+          I've worked in customer and technical support since 2016, mostly
+          with Shopify and WordPress products, helping customers over chat,
+          email and phone.
         </p>
         <div class="actions">
           <a class="btn btn-primary" href="mailto:ndimacharia@gmail.com">
@@ -460,16 +558,16 @@
 
         <div class="stats">
           <div class="stat">
-            <strong>7+ years</strong>
-            <span>in SaaS &amp; technology support</span>
+            <strong>Since 2016</strong>
+            <span>in customer &amp; technical support</span>
           </div>
           <div class="stat">
             <strong>40+ tickets</strong>
             <span>handled per day</span>
           </div>
           <div class="stat">
-            <strong>5 teams</strong>
-            <span>of Shopify &amp; WordPress products</span>
+            <strong>5 companies</strong>
+            <span>Shopify &amp; WordPress products</span>
           </div>
           <div class="stat">
             <strong>3 channels</strong>
@@ -481,62 +579,26 @@
       <section id="about">
         <h2 class="section-title">About</h2>
         <p class="about">
-          I'm a customer support specialist with 7+ years in SaaS and technology
-          environments, delivering high-volume live support across chat, email,
-          and phone. I'm at my best on time-sensitive issues: troubleshooting
-          calmly, escalating critical cases, and working with development and
-          product teams to get fixes out quickly. I've worked in Zendesk,
-          Freshdesk, Intercom, and Front, and I care about giving customers an
-          experience that's fast and genuinely helpful.
+          My support career started in 2016 at Influx Inc., working on Shopify
+          and WordPress products. Since then I've worked with Presidio
+          Creative, Trailblaze Media, Archetype Themes and Troop Themes. The
+          work has covered live support, account and billing questions,
+          customization and integration issues, bug reporting, release
+          testing, help documentation and training new team members.
         </p>
-      </section>
-
-      <section id="focus">
-        <h2 class="section-title">What I bring</h2>
-        <div class="two-col focus-grid">
-          <div class="card">
-            <h3>Shopify merchants are my main customer</h3>
-            <p>
-              Since 2016 I've supported merchants at Troop Themes, Archetype
-              Themes, Presidio Creative, Trailblaze Media and Influx, covering
-              customizations, theme and app integration issues, and account
-              and billing questions.
-            </p>
-          </div>
-          <div class="card">
-            <h3>I troubleshoot before I escalate</h3>
-            <p>
-              At Troop Themes I take escalated tickets from Tier 1. When a
-              problem turns out to be a bug, developers get it from me with the
-              details they need to act on it. At Presidio I also ran
-              compatibility testing across devices and browsers.
-            </p>
-          </div>
-          <div class="card">
-            <h3>I write things down</h3>
-            <p>
-              I've written self-help guides, FAQs and knowledge base articles
-              at four companies, so merchants with common questions can solve
-              them without opening a ticket.
-            </p>
-          </div>
-          <div class="card">
-            <h3>I own more than the queue</h3>
-            <p>
-              Beyond tickets, I've tested new theme releases before launch,
-              passed customer feedback to product teams, and trained new
-              support staff at Archetype Themes.
-            </p>
-          </div>
-        </div>
+        <p class="about">
+          Day to day I've used Zendesk, Freshdesk, Intercom, Front, Jira and
+          Trello.
+        </p>
       </section>
 
       <section id="experience">
         <h2 class="section-title">Experience</h2>
-        <div class="jobs">
-          <article class="job">
-            <p class="dates">2019 — Present</p>
-            <div>
+        <ol class="timeline">
+          <li class="tl-item is-current">
+            <p class="tl-date">2019 — Present</p>
+            <span class="tl-dot" aria-hidden="true"></span>
+            <article class="tl-card">
               <h3>Technical Support Engineer &amp; QA</h3>
               <p class="company">Troop Themes</p>
               <ul>
@@ -557,12 +619,12 @@
                   scale support.
                 </li>
               </ul>
-            </div>
-          </article>
-
-          <article class="job">
-            <p class="dates">2020 — Aug 2025</p>
-            <div>
+            </article>
+          </li>
+          <li class="tl-item">
+            <p class="tl-date">2020 — Aug 2025</p>
+            <span class="tl-dot" aria-hidden="true"></span>
+            <article class="tl-card">
               <h3>Technical Support Specialist</h3>
               <p class="company">Archetype Themes</p>
               <ul>
@@ -583,12 +645,12 @@
                   consistency.
                 </li>
               </ul>
-            </div>
-          </article>
-
-          <article class="job">
-            <p class="dates">2018 — Present</p>
-            <div>
+            </article>
+          </li>
+          <li class="tl-item is-current">
+            <p class="tl-date">2018 — Present</p>
+            <span class="tl-dot" aria-hidden="true"></span>
+            <article class="tl-card">
               <h3>Technical Support Specialist</h3>
               <p class="company">Trailblaze Media</p>
               <ul>
@@ -602,12 +664,12 @@
                 </li>
                 <li>Run testing and QA checks for new theme releases.</li>
               </ul>
-            </div>
-          </article>
-
-          <article class="job">
-            <p class="dates">2018 — 2022</p>
-            <div>
+            </article>
+          </li>
+          <li class="tl-item">
+            <p class="tl-date">2018 — 2022</p>
+            <span class="tl-dot" aria-hidden="true"></span>
+            <article class="tl-card">
               <h3>Technical Support Engineer &amp; QA</h3>
               <p class="company">Presidio Creative · San Francisco</p>
               <ul>
@@ -624,12 +686,12 @@
                   consistent, responsive performance.
                 </li>
               </ul>
-            </div>
-          </article>
-
-          <article class="job">
-            <p class="dates">2016 — 2018</p>
-            <div>
+            </article>
+          </li>
+          <li class="tl-item">
+            <p class="tl-date">2016 — 2018</p>
+            <span class="tl-dot" aria-hidden="true"></span>
+            <article class="tl-card">
               <h3>Customer Support Engineer</h3>
               <p class="company">Influx Inc. · Melbourne</p>
               <ul>
@@ -645,9 +707,10 @@
                   Created and updated FAQs and knowledge base resources.
                 </li>
               </ul>
-            </div>
-          </article>
-        </div>
+            </article>
+          </li>
+          <li class="tl-start">2016 · Started in customer support</li>
+        </ol>
       </section>
 
       <section id="skills">
@@ -669,7 +732,6 @@
               <li>Shopify</li>
               <li>WordPress</li>
               <li>Web app &amp; integration troubleshooting</li>
-              <li>Theme &amp; app conflicts</li>
               <li>HTML &amp; CSS customization</li>
             </ul>
           </div>
@@ -721,8 +783,8 @@
       <section id="contact" class="contact">
         <h2>Let's talk</h2>
         <p class="lead">
-          Hiring for technical support on a Shopify app or theme? Send me a
-          note.
+          If you'd like to talk about a support role or work together, email
+          me or book a call.
         </p>
         <div class="actions">
           <a class="btn btn-primary" href="mailto:ndimacharia@gmail.com">
