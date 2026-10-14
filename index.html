@@ -3,1229 +3,714 @@
   <head>
     <meta charset="UTF-8" />
     <meta name="viewport" content="width=device-width, initial-scale=1" />
-    <link rel="shortcut icon" href="./favicon.png" type="image/png">
+    <link rel="icon" href="/favicon.ico" />
     <title>Nick Ndirangu Macharia | Technical Support Specialist</title>
     <meta
       name="description"
-      content="Portfolio resume website for Nick Ndirangu Macharia, Technical Support Specialist with 7+ years of SaaS experience."
+      content="Nick Ndirangu Macharia — Technical & Customer Support Specialist with 7+ years in SaaS, supporting Shopify and WordPress merchants."
     />
     <link rel="preconnect" href="https://fonts.googleapis.com" />
     <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin />
     <link
-      href="https://fonts.googleapis.com/css2?family=Cormorant+Garamond:wght@500;600;700&family=Work+Sans:wght@400;500;600;700&display=swap"
+      href="https://fonts.googleapis.com/css2?family=Inter:wght@400;500;600;700&display=swap"
       rel="stylesheet"
     />
 
     <style>
       :root {
-  --background: hsl(32, 45%, 92%);
-  --foreground: hsl(17, 36%, 16%);
-  --card: hsl(25, 40%, 95%);
-  --card-foreground: hsl(17, 36%, 16%);
-  --primary: hsl(0, 35%, 27%);
-  --primary-foreground: hsl(36, 52%, 95%);
-  --secondary: hsl(38, 21%, 39%);
-  --secondary-foreground: hsl(36, 52%, 95%);
-  --muted: hsl(32, 34%, 82%);
-  --muted-foreground: hsl(28, 28%, 38%);
-  --accent: hsl(178, 28%, 26%);
-  --accent-foreground: hsl(36, 52%, 95%);
-  --border: hsl(32, 30%, 75%);
-  --radius-large: 3rem;
-  --radius-medium: 2.4rem;
-  --radius-full: 999px;
-  --shadow-card: 0 20px 45px -30px rgba(51, 39, 27, 0.36);
-  --shadow-featured: 0 25px 60px -28px rgba(91, 46, 46, 0.48);
-}
-
-* {
-  box-sizing: border-box;
-}
-
-html {
-  scroll-behavior: smooth;
-}
-
-body {
-  margin: 0;
-  font-family:
-    "Work Sans",
-    system-ui,
-    -apple-system,
-    BlinkMacSystemFont,
-    "Segoe UI",
-    sans-serif;
-  color: var(--foreground);
-  background: var(--background);
-  background-image:
-    radial-gradient(
-      circle at 12% 18%,
-      rgba(139, 110, 72, 0.25),
-      transparent 55%
-    ),
-    radial-gradient(circle at 88% 24%, rgba(59, 87, 87, 0.18), transparent 58%),
-    radial-gradient(
-      circle at 40% 92%,
-      rgba(162, 132, 101, 0.2),
-      transparent 52%
-    );
-  min-height: 100vh;
-}
-
-a {
-  color: inherit;
-  text-decoration: none;
-}
-
-button {
-  font: inherit;
-  color: inherit;
-}
-
-img {
-  max-width: 100%;
-  display: block;
-}
-
-.wrapper {
-  width: min(1120px, calc(100% - 3rem));
-  margin: 0 auto;
-}
-
-.display-font {
-  font-family: "Cormorant Garamond", "Times New Roman", serif;
-}
-
-.badge {
-  display: inline-flex;
-  align-items: center;
-  gap: 0.5rem;
-  border-radius: var(--radius-full);
-  border: 1px solid rgba(112, 85, 55, 0.3);
-  padding: 0.5rem 1.125rem;
-  font-size: 0.7rem;
-  letter-spacing: 0.35em;
-  text-transform: uppercase;
-  color: rgba(112, 85, 55, 0.75);
-  background: rgba(112, 85, 55, 0.15);
-}
-
-.button {
-  display: inline-flex;
-  align-items: center;
-  justify-content: center;
-  gap: 0.65rem;
-  border-radius: var(--radius-full);
-  padding: 0.9rem 1.75rem;
-  font-weight: 600;
-  letter-spacing: 0.02em;
-  border: none;
-  cursor: pointer;
-  transition:
-    transform 0.3s ease,
-    box-shadow 0.3s ease,
-    background 0.3s ease,
-    color 0.3s ease;
-}
-
-.button-primary {
-  background: var(--primary);
-  color: var(--primary-foreground);
-  box-shadow: var(--shadow-featured);
-}
-
-.button-primary:hover {
-  transform: translateY(-4px);
-  background: hsl(0, 35%, 24%);
-}
-
-.button-outline {
-  background: transparent;
-  border: 1px solid rgba(112, 85, 55, 0.35);
-  color: var(--foreground);
-}
-
-.button-outline:hover {
-  transform: translateY(-4px);
-  border-color: var(--primary);
-  color: var(--primary);
-}
-
-.section {
-  padding: clamp(3.5rem, 6vw, 6rem) 0;
-}
-
-.section-title {
-  font-size: clamp(2.3rem, 4vw, 3.2rem);
-  font-family: "Cormorant Garamond", "Times New Roman", serif;
-  margin: 0 0 1.5rem 0;
-  line-height: 1.1;
-}
-
-.section-subtitle {
-  margin: 0;
-  font-size: 0.75rem;
-  text-transform: uppercase;
-  letter-spacing: 0.35em;
-  color: rgba(112, 85, 55, 0.75);
-}
-
-.hero {
-  display: grid;
-  gap: clamp(2rem, 5vw, 3.5rem);
-  align-items: center;
-}
-
-.hero-content {
-  position: relative;
-  display: grid;
-  gap: 1.5rem;
-}
-
-.hero-stamp {
-  position: absolute;
-  left: -4rem;
-  top: 1.5rem;
-  padding: 0.75rem 2.25rem;
-  border-radius: var(--radius-full);
-  border: 2px solid rgba(91, 46, 46, 0.4);
-  font-size: 0.6rem;
-  text-transform: uppercase;
-  letter-spacing: 0.6em;
-  color: rgba(91, 46, 46, 0.85);
-  transform: rotate(-6deg);
-  background: rgba(91, 46, 46, 0.08);
-  box-shadow: 0 12px 32px rgba(91, 46, 46, 0.18);
-}
-
-.hero-card {
-  position: relative;
-  border-radius: 2.4rem;
-  padding: clamp(1.75rem, 5vw, 2.5rem);
-  border: 1px solid rgba(112, 85, 55, 0.35);
-  background: rgba(247, 243, 235, 0.9);
-  box-shadow: var(--shadow-card);
-  backdrop-filter: blur(12px);
-  display: grid;
-  gap: 1.75rem;
-}
-
-.hero-card svg.stamp-lines {
-  position: absolute;
-  right: -2.5rem;
-  top: -3rem;
-  width: clamp(8rem, 14vw, 9rem);
-  height: clamp(8rem, 14vw, 9rem);
-  color: rgba(91, 46, 46, 0.35);
-}
-
-.card-group {
-  display: grid;
-  gap: 0.8rem;
-}
-
-.card-list {
-  display: grid;
-  gap: 0.7rem;
-  font-size: 0.95rem;
-  color: rgba(66, 49, 33, 0.78);
-  list-style: none;
-  padding: 0;
-  margin: 0;
-}
-
-.card-list li {
-  padding: 0.75rem 1rem;
-  border-radius: 1.5rem;
-  background: rgba(112, 85, 55, 0.12);
-}
-
-.cta-group {
-  display: flex;
-  flex-wrap: wrap;
-  gap: 1rem;
-  align-items: center;
-}
-
-.stat-grid {
-  display: grid;
-  gap: 1.5rem;
-}
-
-.stat-card {
-  position: relative;
-  padding: 2rem;
-  border-radius: 2.4rem;
-  border: 1px solid rgba(112, 85, 55, 0.35);
-  background: var(--card);
-  box-shadow: var(--shadow-card);
-  transition:
-    transform 0.35s ease,
-    box-shadow 0.35s ease;
-}
-
-.stat-card:hover {
-  transform: translateY(-6px);
-  box-shadow: var(--shadow-featured);
-}
-
-.stat-value {
-  font-size: clamp(2.8rem, 6vw, 3.6rem);
-  font-family: "Cormorant Garamond", "Times New Roman", serif;
-  color: var(--primary);
-}
-
-.timeline {
-  display: grid;
-  gap: 1.75rem;
-}
-
-.timeline-card {
-  position: relative;
-  padding: clamp(2rem, 4vw, 2.75rem);
-  border-radius: 2.6rem;
-  border: 1px solid rgba(112, 85, 55, 0.4);
-  background: var(--card);
-  box-shadow: var(--shadow-card);
-  transition:
-    transform 0.35s ease,
-    box-shadow 0.35s ease;
-  display: grid;
-  gap: 1.25rem;
-}
-
-.timeline-card:hover {
-  transform: translateY(-6px);
-  box-shadow: var(--shadow-featured);
-}
-
-.timeline-header {
-  display: grid;
-  gap: 0.4rem;
-}
-
-.timeline-header .section-title {
-  font-size: clamp(1.6rem, 3vw, 2.1rem);
-  margin: 0;
-}
-
-.timeline-card ul {
-  list-style: none;
-  padding: 0;
-  margin: 0;
-  display: grid;
-  gap: 0.9rem;
-}
-
-.timeline-card li {
-  padding: 0.85rem 1.2rem;
-  border-radius: 1.8rem;
-  background: rgba(112, 85, 55, 0.12);
-  color: rgba(66, 49, 33, 0.82);
-  border: 1px solid transparent;
-  transition:
-    border 0.3s ease,
-    background 0.3s ease;
-}
-
-.timeline-card:hover li {
-  border-color: rgba(91, 46, 46, 0.25);
-  background: rgba(91, 46, 46, 0.1);
-}
-
-.skills-grid {
-  display: grid;
-  gap: 1.2rem;
-}
-
-.skill-card {
-  border-radius: 2rem;
-  border: 1px solid rgba(112, 85, 55, 0.4);
-  background: var(--card);
-  padding: 1.75rem;
-  box-shadow: var(--shadow-card);
-  display: grid;
-  gap: 0.9rem;
-}
-
-.references-panel {
-  display: grid;
-  gap: 1.2rem;
-}
-
-.section-header {
-  z-index: 60;
-  padding: 50px;
-  display: grid;
-  gap: 1.3rem;
-  margin-bottom: 2.5rem;
-}
-
-.section-heading {
-  display: flex;
-  flex-direction: column;
-  gap: 1rem;
-}
-
-.section-header .section-title {
-  margin: 0;
-}
-
-.skill-card ul {
-  list-style: none;
-  padding: 0;
-  margin: 1.2rem 0 0 0;
-  display: grid;
-  gap: 0.7rem;
-  color: rgba(66, 49, 33, 0.8);
-}
-
-.chip {
-  display: inline-flex;
-  align-items: center;
-  gap: 0.5rem;
-  padding: 0.5rem 1.25rem;
-  border-radius: var(--radius-full);
-  border: 1px solid rgba(91, 46, 46, 0.35);
-  background: rgba(91, 46, 46, 0.15);
-  font-size: 0.7rem;
-  letter-spacing: 0.35em;
-  text-transform: uppercase;
-  color: var(--primary);
-}
-
-.services-grid {
-  display: grid;
-  gap: 1.5rem;
-}
-
-.service-card {
-  position: relative;
-  padding: 2.25rem;
-  border-radius: 2.6rem;
-  border: 1px solid rgba(112, 85, 55, 0.4);
-  background: var(--card);
-  box-shadow: var(--shadow-card);
-  transition:
-    transform 0.35s ease,
-    box-shadow 0.35s ease;
-}
-
-.service-card:hover {
-  transform: translateY(-6px);
-  box-shadow: var(--shadow-featured);
-}
-
-.contact-banner {
-  position: relative;
-  padding: clamp(2.5rem, 6vw, 3.5rem);
-  border-radius: 2.8rem;
-  border: 1px solid rgba(91, 46, 46, 0.4);
-  background-image:
-    radial-gradient(
-      circle at top left,
-      rgba(91, 46, 46, 0.22),
-      transparent 65%
-    ),
-    radial-gradient(
-      circle at bottom right,
-      rgba(45, 76, 76, 0.18),
-      transparent 60%
-    );
-  box-shadow: var(--shadow-featured);
-  overflow: hidden;
-}
-
-.contact-banner::before,
-.contact-banner::after {
-  content: "";
-  position: absolute;
-  border-radius: 50%;
-  border: 1px solid rgba(91, 46, 46, 0.45);
-  opacity: 0.6;
-  filter: blur(2px);
-}
-
-.contact-banner::before {
-  width: 11rem;
-  height: 11rem;
-  top: -3rem;
-  right: -3rem;
-  background: rgba(91, 46, 46, 0.15);
-}
-
-.contact-banner::after {
-  width: 10rem;
-  height: 10rem;
-  bottom: -3rem;
-  left: 45%;
-  transform: rotate(8deg);
-  background: rgba(45, 76, 76, 0.12);
-  border-color: rgba(45, 76, 76, 0.45);
-}
-
-.footer {
-  border-top: 1px solid rgba(112, 85, 55, 0.35);
-  background: rgba(247, 243, 235, 0.8);
-  backdrop-filter: blur(18px);
-  padding: 3rem 0;
-  margin-top: 4rem;
-}
-
-.footer-top {
-  display: grid;
-  gap: 1.5rem;
-  margin-bottom: 2.5rem;
-}
-
-.footer-bottom {
-  display: flex;
-  flex-direction: column;
-  gap: 0.6rem;
-  font-size: 0.85rem;
-  color: rgba(66, 49, 33, 0.78);
-}
-
-@media (min-width: 720px) {
-  .footer-bottom {
-    flex-direction: row;
-    justify-content: space-between;
-    align-items: center;
-  }
-}
-
-.footer-links {
-  display: flex;
-  flex-wrap: wrap;
-  gap: 0.75rem;
-  font-weight: 500;
-  font-size: 0.95rem;
-}
-
-.footer-link {
-  padding: 0.65rem 1.3rem;
-  border-radius: var(--radius-full);
-  border: 1px solid rgba(112, 85, 55, 0.35);
-  transition:
-    border 0.3s ease,
-    color 0.3s ease;
-}
-
-.footer-link:hover {
-  border-color: var(--primary);
-  color: var(--primary);
-}
-
-.mobile-menu {
-  position: fixed;
-  inset: 0;
-  background: rgba(49, 38, 27, 0.82);
-  padding: 1.5rem;
-  display: none;
-  z-index: 999;
-}
-
-.mobile-menu.open {
-  display: flex;
-  align-items: center;
-  justify-content: center;
-}
-
-.mobile-menu .menu-content {
-  width: min(90%, 320px);
-  background: rgba(247, 243, 235, 0.95);
-  border-radius: 2rem;
-  padding: 2rem;
-  display: grid;
-  gap: 1.25rem;
-  box-shadow: var(--shadow-featured);
-}
-
-.mobile-menu .menu-link {
-  padding: 0.9rem 1rem;
-  border-radius: 1.5rem;
-  font-weight: 600;
-  border: 1px solid transparent;
-  background: rgba(112, 85, 55, 0.12);
-  text-align: center;
-  transition:
-    border 0.3s ease,
-    background 0.3s ease;
-}
-
-.mobile-menu .menu-link:hover {
-  border-color: var(--primary);
-  background: rgba(112, 85, 55, 0.16);
-}
-
-header {
-  position: sticky;
-  top: 0;
-  z-index: 50;
-  backdrop-filter: blur(18px);
-  background: rgba(247, 241, 231, 0.88);
-  border-bottom: 1px solid rgba(112, 85, 55, 0.35);
-}
-
-.header-inner {
-  display: flex;
-  align-items: center;
-  justify-content: space-between;
-  padding: 1.75rem 0;
-  gap: 1.5rem;
-}
-
-.brand {
-  display: flex;
-  align-items: center;
-  gap: 1rem;
-  color: inherit;
-}
-
-.brand-mark {
-  width: 3rem;
-  height: 3rem;
-  border-radius: 50%;
-  display: grid;
-  place-items: center;
-  font-family: "Cormorant Garamond", serif;
-  font-weight: 600;
-  letter-spacing: 0.2em;
-  color: var(--primary-foreground);
-  background: linear-gradient(
-    135deg,
-    rgba(91, 46, 46, 0.95),
-    rgba(38, 66, 66, 0.85)
-  );
-  box-shadow: 0 12px 24px rgba(91, 46, 46, 0.35);
-}
-
-.brand-roles {
-  display: flex;
-  flex-direction: column;
-  line-height: 1.1;
-}
-
-.brand-name {
-  font-family: "Cormorant Garamond", serif;
-  font-size: 1.4rem;
-  font-weight: 600;
-}
-
-.brand-title {
-  font-size: 0.68rem;
-  letter-spacing: 0.38em;
-  text-transform: uppercase;
-  color: rgba(112, 85, 55, 0.75);
-}
-
-.nav-links {
-  display: flex;
-  gap: 2rem;
-  font-weight: 500;
-  font-size: 0.95rem;
-}
-
-.nav-link:hover {
-  color: var(--primary);
-}
-
-.nav-actions {
-  display: flex;
-  gap: 0.75rem;
-  align-items: center;
-}
-
-.menu-toggle {
-  display: none;
-  padding: 0.5rem;
-  border-radius: 50%;
-  border: 1px solid rgba(112, 85, 55, 0.35);
-  background: rgba(247, 243, 235, 0.8);
-}
-
-@media (max-width: 980px) {
-  .hero {
-    grid-template-columns: 1fr;
-  }
-
-  .hero-stamp {
-    display: none;
-  }
-
-  .section-heading {
-    align-items: flex-start;
-  }
-
-  .cta-group {
-    flex-direction: column;
-    align-items: flex-start;
-  }
-
-  .nav-links,
-  .nav-actions {
-    display: none;
-  }
-
-  .menu-toggle {
-    display: inline-flex;
-  }
-
-  .timeline {
-    grid-template-columns: 1fr;
-  }
-
-  .references-panel {
-    margin-top: 2rem;
-  }
-}
-
-@media (min-width: 981px) {
-  .hero {
-    grid-template-columns: 1.2fr 0.8fr;
-  }
-
-  .stat-grid {
-    grid-template-columns: repeat(3, minmax(0, 1fr));
-  }
-
-  .timeline {
-    grid-template-columns: repeat(2, minmax(0, 1fr));
-  }
-
-  .section-heading {
-    flex-direction: row;
-    justify-content: space-between;
-    align-items: flex-end;
-  }
-
-  .skills-layout {
-    display: grid;
-    grid-template-columns: 1.1fr 0.9fr;
-    gap: 2rem;
-  }
-
-  .services-grid {
-    grid-template-columns: repeat(2, minmax(0, 1fr));
-  }
-}
-
-@media (max-width: 680px) {
-  .wrapper {
-    width: min(680px, calc(100% - 2.5rem));
-  }
-
-  .section {
-    padding: 3rem 0;
-  }
-
-  .hero-card svg.stamp-lines {
-    display: none;
-  }
-
-  .footer-links {
-    flex-direction: column;
-    align-items: flex-start;
-  }
-}
+        --bg: #fafaf9;
+        --surface: #ffffff;
+        --text: #1c1917;
+        --muted: #57534e;
+        --subtle: #a8a29e;
+        --border: #e7e5e4;
+        --accent: #0f766e;
+        --accent-soft: #ccfbf1;
+        --accent-text: #ffffff;
+        --radius: 14px;
+      }
+
+      @media (prefers-color-scheme: dark) {
+        :root {
+          --bg: #0c0a09;
+          --surface: #1c1917;
+          --text: #f5f5f4;
+          --muted: #a8a29e;
+          --subtle: #78716c;
+          --border: #292524;
+          --accent: #2dd4bf;
+          --accent-soft: #134e4a;
+          --accent-text: #042f2e;
+        }
+      }
+
+      * {
+        box-sizing: border-box;
+      }
+
+      html {
+        scroll-behavior: smooth;
+        scroll-padding-top: 5rem;
+      }
+
+      body {
+        margin: 0;
+        font-family:
+          "Inter",
+          system-ui,
+          -apple-system,
+          "Segoe UI",
+          sans-serif;
+        font-size: 16px;
+        line-height: 1.65;
+        color: var(--text);
+        background: var(--bg);
+        -webkit-font-smoothing: antialiased;
+      }
+
+      a {
+        color: inherit;
+      }
+
+      h1,
+      h2,
+      h3 {
+        margin: 0;
+        line-height: 1.2;
+        letter-spacing: -0.02em;
+      }
+
+      p {
+        margin: 0;
+      }
+
+      .wrap {
+        width: min(880px, 100% - 2rem);
+        margin-inline: auto;
+      }
+
+      /* Header */
+      .site-header {
+        position: sticky;
+        top: 0;
+        z-index: 10;
+        background: color-mix(in srgb, var(--bg) 85%, transparent);
+        backdrop-filter: blur(12px);
+        border-bottom: 1px solid var(--border);
+      }
+
+      .site-header .wrap {
+        display: flex;
+        align-items: center;
+        justify-content: space-between;
+        gap: 1rem;
+        height: 4rem;
+      }
+
+      .brand {
+        font-weight: 700;
+        text-decoration: none;
+        white-space: nowrap;
+      }
+
+      .nav {
+        display: flex;
+        gap: 1.5rem;
+        font-size: 0.925rem;
+      }
+
+      .nav a {
+        color: var(--muted);
+        text-decoration: none;
+      }
+
+      .nav a:hover {
+        color: var(--text);
+      }
+
+      @media (max-width: 640px) {
+        .nav a:not(:last-child) {
+          display: none;
+        }
+      }
+
+      /* Buttons */
+      .actions {
+        display: flex;
+        flex-wrap: wrap;
+        gap: 0.75rem;
+      }
+
+      .btn {
+        display: inline-flex;
+        align-items: center;
+        gap: 0.5rem;
+        padding: 0.7rem 1.2rem;
+        border-radius: 999px;
+        font-weight: 600;
+        font-size: 0.95rem;
+        text-decoration: none;
+        border: 1px solid var(--border);
+        background: var(--surface);
+        transition:
+          border-color 0.2s,
+          background 0.2s;
+      }
+
+      .btn:hover {
+        border-color: var(--accent);
+      }
+
+      .btn-primary {
+        background: var(--accent);
+        border-color: var(--accent);
+        color: var(--accent-text);
+      }
+
+      .btn-primary:hover {
+        filter: brightness(1.08);
+      }
+
+      .btn svg {
+        width: 1rem;
+        height: 1rem;
+      }
+
+      /* Hero */
+      .hero {
+        padding: clamp(3.5rem, 10vw, 6rem) 0 3rem;
+      }
+
+      .eyebrow {
+        display: inline-flex;
+        align-items: center;
+        gap: 0.5rem;
+        font-size: 0.85rem;
+        font-weight: 600;
+        color: var(--accent);
+        margin-bottom: 1rem;
+      }
+
+      .hero h1 {
+        font-size: clamp(2.25rem, 6vw, 3.5rem);
+        font-weight: 700;
+      }
+
+      .hero .role {
+        font-size: clamp(1.15rem, 2.5vw, 1.4rem);
+        color: var(--muted);
+        margin-top: 0.5rem;
+      }
+
+      .hero .lead {
+        max-width: 62ch;
+        margin: 1.5rem 0 2rem;
+        font-size: 1.075rem;
+        color: var(--muted);
+      }
+
+      .stats {
+        display: grid;
+        grid-template-columns: repeat(auto-fit, minmax(160px, 1fr));
+        gap: 1px;
+        margin-top: 3rem;
+        background: var(--border);
+        border: 1px solid var(--border);
+        border-radius: var(--radius);
+        overflow: hidden;
+      }
+
+      .stat {
+        background: var(--surface);
+        padding: 1.25rem 1.25rem;
+      }
+
+      .stat strong {
+        display: block;
+        font-size: 1.6rem;
+        letter-spacing: -0.02em;
+      }
+
+      .stat span {
+        font-size: 0.875rem;
+        color: var(--muted);
+      }
+
+      /* Sections */
+      section {
+        padding: 3.5rem 0;
+        border-top: 1px solid var(--border);
+      }
+
+      .section-title {
+        font-size: 0.8rem;
+        font-weight: 600;
+        text-transform: uppercase;
+        letter-spacing: 0.12em;
+        color: var(--subtle);
+        margin-bottom: 2rem;
+      }
+
+      .about {
+        max-width: 68ch;
+        font-size: 1.05rem;
+        color: var(--muted);
+      }
+
+      /* Experience */
+      .jobs {
+        display: grid;
+        gap: 2.5rem;
+      }
+
+      .job {
+        display: grid;
+        grid-template-columns: 9.5rem 1fr;
+        gap: 1.5rem;
+      }
+
+      .job .dates {
+        font-size: 0.875rem;
+        color: var(--subtle);
+        padding-top: 0.2rem;
+        font-variant-numeric: tabular-nums;
+      }
+
+      .job h3 {
+        font-size: 1.1rem;
+        font-weight: 600;
+      }
+
+      .job .company {
+        color: var(--accent);
+        font-weight: 500;
+        font-size: 0.95rem;
+      }
+
+      .job ul {
+        margin: 0.75rem 0 0;
+        padding-left: 1.1rem;
+        color: var(--muted);
+      }
+
+      .job li + li {
+        margin-top: 0.35rem;
+      }
+
+      .job li::marker {
+        color: var(--subtle);
+      }
+
+      @media (max-width: 640px) {
+        .job {
+          grid-template-columns: 1fr;
+          gap: 0.25rem;
+        }
+      }
+
+      /* Skills */
+      .skills {
+        display: grid;
+        grid-template-columns: repeat(auto-fit, minmax(240px, 1fr));
+        gap: 1.75rem 2rem;
+      }
+
+      .skills h3 {
+        font-size: 1rem;
+        font-weight: 600;
+        margin-bottom: 0.75rem;
+      }
+
+      .tags {
+        display: flex;
+        flex-wrap: wrap;
+        gap: 0.5rem;
+        list-style: none;
+        margin: 0;
+        padding: 0;
+      }
+
+      .tags li {
+        font-size: 0.875rem;
+        padding: 0.3rem 0.75rem;
+        border-radius: 999px;
+        border: 1px solid var(--border);
+        background: var(--surface);
+        color: var(--muted);
+      }
+
+      /* Education */
+      .two-col {
+        display: grid;
+        grid-template-columns: repeat(auto-fit, minmax(240px, 1fr));
+        gap: 1rem;
+      }
+
+      .card {
+        padding: 1.5rem;
+        border: 1px solid var(--border);
+        border-radius: var(--radius);
+        background: var(--surface);
+      }
+
+      .card h3 {
+        font-size: 1rem;
+        font-weight: 600;
+      }
+
+      .card p {
+        color: var(--muted);
+        margin-top: 0.35rem;
+      }
+
+      /* Contact */
+      .contact h2 {
+        font-size: clamp(1.75rem, 4vw, 2.25rem);
+        font-weight: 700;
+      }
+
+      .contact .lead {
+        color: var(--muted);
+        max-width: 56ch;
+        margin: 0.75rem 0 1.75rem;
+      }
+
+      .contact-list {
+        list-style: none;
+        margin: 2rem 0 0;
+        padding: 0;
+        display: grid;
+        gap: 0.5rem;
+        color: var(--muted);
+      }
+
+      .contact-list a {
+        text-decoration: none;
+      }
+
+      .contact-list a:hover {
+        color: var(--accent);
+      }
+
+      .contact-list b {
+        display: inline-block;
+        min-width: 5.5rem;
+        font-weight: 500;
+        color: var(--subtle);
+      }
+
+      footer {
+        padding: 2rem 0 3rem;
+        border-top: 1px solid var(--border);
+        font-size: 0.875rem;
+        color: var(--subtle);
+      }
+
+      :focus-visible {
+        outline: 2px solid var(--accent);
+        outline-offset: 3px;
+        border-radius: 6px;
+      }
     </style>
-   
-    <link rel="stylesheet" href="https://raw.githubusercontent.com/NickFlicks/nick-portfolio/refs/heads/main/style.css"/>
   </head>
   <body>
-    <header>
-      <div class="wrapper header-inner">
-        <a class="brand" href="#top">
-          <span class="brand-mark">NN</span>
-          <span class="brand-roles">
-            <span class="brand-name">Nick Ndirangu</span>
-            <span class="brand-title">Technical Support Specialist</span>
-          </span>
-        </a>
-        <nav class="nav-links" aria-label="Primary">
-          <a class="nav-link" href="#overview">Overview</a>
-          <a class="nav-link" href="#experience">Experience</a>
-          <a class="nav-link" href="#services">Services</a>
-          <a class="nav-link" href="#contact">Contact</a>
+    <header class="site-header">
+      <div class="wrap">
+        <a class="brand" href="#top">Nick Macharia</a>
+        <nav class="nav" aria-label="Primary">
+          <a href="#about">About</a>
+          <a href="#experience">Experience</a>
+          <a href="#skills">Skills</a>
+          <a href="#contact">Contact</a>
         </nav>
-        <div class="nav-actions">
-          <a class="button button-outline" href="#services">Services</a>
-          <a class="button button-primary" href="mailto:ndimacharia@gmail.com"
-            >Book a Consultation</a
-          >
-        </div>
-        <button
-          class="menu-toggle"
-          aria-label="Open navigation"
-          data-menu-toggle
-        >
-          <svg
-            width="20"
-            height="20"
-            viewBox="0 0 24 24"
-            fill="none"
-            xmlns="http://www.w3.org/2000/svg"
-          >
-            <path
-              d="M4 6H20"
-              stroke="currentColor"
-              stroke-width="1.5"
-              stroke-linecap="round"
-            />
-            <path
-              d="M4 12H20"
-              stroke="currentColor"
-              stroke-width="1.5"
-              stroke-linecap="round"
-            />
-            <path
-              d="M4 18H20"
-              stroke="currentColor"
-              stroke-width="1.5"
-              stroke-linecap="round"
-            />
-          </svg>
-        </button>
       </div>
     </header>
 
-    <div class="mobile-menu" data-mobile-menu aria-hidden="true">
-      <div class="menu-content">
-        <button class="button button-outline" data-menu-close>Close</button>
-        <a class="menu-link" href="#overview" data-menu-link>Overview</a>
-        <a class="menu-link" href="#experience" data-menu-link>Experience</a>
-        <a class="menu-link" href="#services" data-menu-link>Services</a>
-        <a class="menu-link" href="#contact" data-menu-link>Contact</a>
-        <a class="button button-primary" href="mailto:ndimacharia@gmail.com"
-          >Email Nick</a
-        >
+    <main id="top" class="wrap">
+      <div class="hero">
+        <p class="eyebrow">Nairobi, Kenya · Remote</p>
+        <h1>Nick Ndirangu Macharia</h1>
+        <p class="role">Technical &amp; Customer Support Specialist</p>
+        <p class="lead">
+          7+ years helping SaaS and e-commerce customers get unstuck. I resolve
+          complex Shopify and WordPress issues, handle escalations with
+          empathy, and write the documentation that keeps customers moving.
+        </p>
+        <div class="actions">
+          <a class="btn btn-primary" href="mailto:ndimacharia@gmail.com">
+            Get in touch
+          </a>
+          <a
+            class="btn"
+            href="/Nick_Macharia_Resume.pdf"
+            target="_blank"
+            rel="noopener"
+          >
+            <svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round" aria-hidden="true"><path d="M12 3v12m0 0-4-4m4 4 4-4M5 21h14" /></svg>
+            Download résumé
+          </a>
+          <a
+            class="btn"
+            href="https://www.linkedin.com/in/nicholas-ndirangu-macharia-2917409a/"
+            target="_blank"
+            rel="noopener"
+          >
+            LinkedIn
+          </a>
+        </div>
+
+        <div class="stats">
+          <div class="stat">
+            <strong>7+ years</strong>
+            <span>in SaaS &amp; technology support</span>
+          </div>
+          <div class="stat">
+            <strong>40+ tickets</strong>
+            <span>handled per day</span>
+          </div>
+          <div class="stat">
+            <strong>5 teams</strong>
+            <span>of Shopify &amp; WordPress products</span>
+          </div>
+          <div class="stat">
+            <strong>3 channels</strong>
+            <span>live chat, email &amp; phone</span>
+          </div>
+        </div>
       </div>
-    </div>
 
-    <main>
-      <section id="overview" class="section">
-        <div class="wrapper hero">
-          <div class="hero-content">
-            <span class="badge">Technical Support Specialist</span>
-            <h1 class="section-title">
-              Elevating customer journeys through empathetic, technical support
-              leadership.
-            </h1>
-            <p>
-              I’m Nick Ndirangu Macharia, a Nairobi-based Technical Support
-              Engineer with over seven years helping high-growth SaaS teams
-              deliver calm, confident experiences. I collaborate with product,
-              engineering, and success leaders to translate customer insights
-              into resilient, self-service ecosystems.
-            </p>
-            <div class="hero-stamp" aria-hidden="true">Since 2016</div>
-            <div class="cta-group">
-              <a
-                class="button button-primary"
-                href="mailto:ndimacharia@gmail.com"
-                >Let’s Build a Support Strategy</a
-              >
-              <a class="button button-outline" href="#services"
-                >Explore Services Offered</a
-              >
-            </div>
-          </div>
-          <aside class="hero-card" aria-label="Contact card">
-            <svg
-              class="stamp-lines"
-              viewBox="0 0 160 160"
-              fill="none"
-              xmlns="http://www.w3.org/2000/svg"
-              aria-hidden="true"
-            >
-              <circle
-                cx="80"
-                cy="80"
-                r="78"
-                stroke="currentColor"
-                stroke-width="2"
-                stroke-dasharray="6 12"
-              />
-              <path
-                d="M30 80C70 40 90 120 130 80"
-                stroke="currentColor"
-                stroke-width="1.5"
-                stroke-linecap="round"
-              />
-              <path
-                d="M45 50C60 95 100 95 115 50"
-                stroke="currentColor"
-                stroke-width="1.2"
-                stroke-linecap="round"
-              />
-            </svg>
-            <div class="card-group">
-              <h2 class="section-subtitle">Contact</h2>
-              <div class="card-list">
-                <a href="mailto:ndimacharia@gmail.com">ndimacharia@gmail.com</a>
-                <a href="tel:+254717291736">+254 717 291 736</a>
-                <span>Nairobi, Kenya</span>
-              </div>
-            </div>
-            <div class="card-group">
-              <h2 class="section-subtitle">Expertise Snapshot</h2>
-              <ul class="card-list">
-                <li>SaaS Technical Support (Shopify, WordPress)</li>
-                <li>Ticketing Systems: Zendesk, Freshdesk, Jira, Trello</li>
-                <li>Knowledge Base &amp; Documentation Development</li>
+      <section id="about">
+        <h2 class="section-title">About</h2>
+        <p class="about">
+          I'm a customer support specialist with 7+ years in SaaS and technology
+          environments, delivering high-volume live support across chat, email,
+          and phone. I'm at my best on time-sensitive issues: troubleshooting
+          calmly, escalating critical cases, and working with development and
+          product teams to get fixes out quickly. I've worked in Zendesk,
+          Freshdesk, Intercom, and Front, and I care about giving customers an
+          experience that's fast and genuinely helpful.
+        </p>
+      </section>
+
+      <section id="experience">
+        <h2 class="section-title">Experience</h2>
+        <div class="jobs">
+          <article class="job">
+            <p class="dates">2019 — Present</p>
+            <div>
+              <h3>Technical Support Engineer &amp; QA</h3>
+              <p class="company">Troop Themes</p>
+              <ul>
+                <li>
+                  Deliver advanced support for Shopify merchants, resolving
+                  complex customization and integration issues.
+                </li>
+                <li>
+                  Handle escalated tickets from Tier 1 agents with accurate,
+                  empathetic solutions.
+                </li>
+                <li>
+                  Partner with development teams on critical issues, reducing
+                  resolution times.
+                </li>
+                <li>
+                  Write customer-facing documentation and self-help guides to
+                  scale support.
+                </li>
               </ul>
             </div>
-            <a
-              class="button button-outline"
-              href="https://www.linkedin.com/in/nicholas-ndirangu-macharia-2917409a/"
-              target="_blank"
-              rel="noreferrer"
-            >
-              Connect on LinkedIn
-            </a>
-          </aside>
+          </article>
+
+          <article class="job">
+            <p class="dates">2020 — Aug 2025</p>
+            <div>
+              <h3>Technical Support Specialist</h3>
+              <p class="company">Archetype Themes</p>
+              <ul>
+                <li>
+                  Supported 40+ customer tickets daily via Front and Zendesk,
+                  focused on fast, empathetic communication.
+                </li>
+                <li>
+                  Resolved billing and account inquiries while maintaining high
+                  satisfaction ratings.
+                </li>
+                <li>
+                  Tested products and reported bugs, advocating for
+                  customer-driven improvements.
+                </li>
+                <li>
+                  Trained new support staff and created internal resources for
+                  consistency.
+                </li>
+              </ul>
+            </div>
+          </article>
+
+          <article class="job">
+            <p class="dates">2018 — Present</p>
+            <div>
+              <h3>Technical Support Specialist</h3>
+              <p class="company">Trailblaze Media</p>
+              <ul>
+                <li>
+                  Work with the development team to identify and report bugs,
+                  ensuring timely fixes and updates.
+                </li>
+                <li>
+                  Create and maintain support documentation, FAQs, and knowledge
+                  base articles for merchants.
+                </li>
+                <li>Run testing and QA checks for new theme releases.</li>
+              </ul>
+            </div>
+          </article>
+
+          <article class="job">
+            <p class="dates">2018 — 2022</p>
+            <div>
+              <h3>Technical Support Engineer &amp; QA</h3>
+              <p class="company">Presidio Creative · San Francisco</p>
+              <ul>
+                <li>
+                  Escalated and resolved complex merchant issues with the
+                  development team.
+                </li>
+                <li>
+                  Maintained a knowledge base of common issues, solutions, and
+                  internal resources.
+                </li>
+                <li>
+                  Ran compatibility testing across devices and browsers for
+                  consistent, responsive performance.
+                </li>
+              </ul>
+            </div>
+          </article>
+
+          <article class="job">
+            <p class="dates">2016 — 2018</p>
+            <div>
+              <h3>Customer Support Engineer</h3>
+              <p class="company">Influx Inc. · Melbourne</p>
+              <ul>
+                <li>
+                  Supported Shopify and WordPress products across account,
+                  billing, and technical inquiries.
+                </li>
+                <li>
+                  Escalated high-priority issues to developers, minimizing
+                  disruption for customers.
+                </li>
+                <li>
+                  Created and updated FAQs and knowledge base resources.
+                </li>
+              </ul>
+            </div>
+          </article>
         </div>
       </section>
 
-      <section class="section">
-        <div class="wrapper">
-          <div class="stat-grid">
-            <article class="stat-card">
-              <span class="stat-value">7+</span>
-              <h3 class="section-subtitle">Years in SaaS Support</h3>
-              <p>
-                Delivering calm, high-impact guidance across global time zones.
-              </p>
-            </article>
-            <article class="stat-card">
-              <span class="stat-value">35k+</span>
-              <h3 class="section-subtitle">Tickets Resolved</h3>
-              <p>
-                Driving first-response excellence for Shopify &amp; WordPress
-                brands.
-              </p>
-            </article>
-            <article class="stat-card">
-              <span class="stat-value">120+</span>
-              <h3 class="section-subtitle">Knowledge Assets Authored</h3>
-              <p>
-                Empowering teams with scalable documentation and enablement.
-              </p>
-            </article>
+      <section id="skills">
+        <h2 class="section-title">Skills &amp; Tools</h2>
+        <div class="skills">
+          <div>
+            <h3>Customer Support</h3>
+            <ul class="tags">
+              <li>High-volume live support</li>
+              <li>Chat, email &amp; phone</li>
+              <li>Escalation management</li>
+              <li>Billing &amp; account inquiries</li>
+              <li>Staff training</li>
+            </ul>
           </div>
-        </div>
-      </section>
-
-      <section id="experience" class="section">
-        <div class="wrapper">
-          <header class="section-header">
-            <p class="section-subtitle">Career Journey</p>
-            <div class="section-heading">
-              <h2 class="section-title">
-                Trusted by global SaaS teams to resolve complexity with clarity.
-              </h2>
-              <a
-                class="button button-outline"
-                href="mailto:ndimacharia@gmail.com"
-                >Request Full Resume</a
-              >
-            </div>
-          </header>
-          <div class="timeline">
-            <article class="timeline-card">
-              <div class="timeline-header">
-                <h3 class="section-title">
-                  Technical Support Engineer &amp; QA
-                </h3>
-                <span class="chip">Troop Themes</span>
-                <span>2019 — Present</span>
-              </div>
-              <ul>
-                <li>
-                  Primary escalation lead for complex integrations and
-                  customizations across Shopify themes.
-                </li>
-                <li>
-                  Partner with product engineering to translate customer
-                  feedback into actionable improvements.
-                </li>
-                <li>
-                  Expanded internal knowledge base, accelerating onboarding of
-                  new technical agents.
-                </li>
-              </ul>
-            </article>
-            <article class="timeline-card">
-              <div class="timeline-header">
-                <h3 class="section-title">Technical Support Specialist</h3>
-                <span class="chip">Archetype Themes</span>
-                <span>2020 — Aug 2025</span>
-              </div>
-              <ul>
-                <li>
-                  Resolved 40+ high-sensitivity tickets per day while
-                  maintaining CSAT targets above 95%.
-                </li>
-                <li>
-                  Tested and validated new theme releases, informing bug fixes
-                  before public launch.
-                </li>
-                <li>
-                  Championed internal documentation and trained incoming support
-                  specialists.
-                </li>
-              </ul>
-            </article>
-            <article class="timeline-card">
-              <div class="timeline-header">
-                <h3 class="section-title">Technical Support Specialist</h3>
-                <span class="chip">Trailblaze Media</span>
-                <span>2018 — Present</span>
-              </div>
-              <ul>
-                <li>
-                  Developed customer-facing self-help resources boosting
-                  deflection of repetitive inquiries.
-                </li>
-                <li>
-                  Collaborated with developers to reproduce and escalate bugs
-                  with precise reproduction paths.
-                </li>
-                <li>
-                  Coordinated launch testing across devices to guarantee
-                  consistent storefront performance.
-                </li>
-              </ul>
-            </article>
-            <article class="timeline-card">
-              <div class="timeline-header">
-                <h3 class="section-title">Customer Support Engineer</h3>
-                <span class="chip">Influx Inc.</span>
-                <span>2016 — 2018</span>
-              </div>
-              <ul>
-                <li>
-                  Specialized in Shopify &amp; WordPress theme support, from
-                  installation to advanced customization.
-                </li>
-                <li>
-                  Mentored new agents and monitored performance to uphold
-                  technical excellence standards.
-                </li>
-                <li>
-                  Led QA sweeps on apps and plugins prior to release,
-                  safeguarding customer confidence.
-                </li>
-              </ul>
-            </article>
+          <div>
+            <h3>Technical</h3>
+            <ul class="tags">
+              <li>Shopify</li>
+              <li>WordPress</li>
+              <li>Web app &amp; integration troubleshooting</li>
+              <li>HTML &amp; CSS customization</li>
+            </ul>
+          </div>
+          <div>
+            <h3>Tools</h3>
+            <ul class="tags">
+              <li>Zendesk</li>
+              <li>Freshdesk</li>
+              <li>Intercom</li>
+              <li>Front</li>
+              <li>Jira</li>
+              <li>Trello</li>
+            </ul>
+          </div>
+          <div>
+            <h3>Docs &amp; QA</h3>
+            <ul class="tags">
+              <li>Knowledge base articles</li>
+              <li>Self-help guides &amp; FAQs</li>
+              <li>Product testing</li>
+              <li>Bug reporting</li>
+              <li>Cross-browser testing</li>
+            </ul>
           </div>
         </div>
       </section>
 
-      <section class="section">
-        <div class="wrapper skills-layout">
-          <div class="skills-panel">
-            <p class="section-subtitle">Skills &amp; Tools</p>
-            <h2 class="section-title">
-              Full-spectrum support expertise that scales with your product.
-            </h2>
-            <p>
-              From ticket routing to launch readiness, I own every step that
-              keeps customers informed and confident. Here’s how I partner with
-              teams to deliver lasting results.
-            </p>
-            <div class="skills-grid">
-              <article class="skill-card">
-                <h3 class="section-subtitle">Core Platforms</h3>
-                <ul>
-                  <li>Shopify</li>
-                  <li>WordPress</li>
-                  <li>Custom Themes</li>
-                  <li>Liquid</li>
-                  <li>HTML &amp; CSS</li>
-                </ul>
-              </article>
-              <article class="skill-card">
-                <h3 class="section-subtitle">Support Stack</h3>
-                <ul>
-                  <li>Zendesk</li>
-                  <li>Freshdesk</li>
-                  <li>Jira</li>
-                  <li>Trello</li>
-                  <li>Intercom</li>
-                </ul>
-              </article>
-              <article class="skill-card">
-                <h3 class="section-subtitle">Collaboration</h3>
-                <ul>
-                  <li>CX Strategy</li>
-                  <li>Stakeholder Alignment</li>
-                  <li>Training &amp; Coaching</li>
-                  <li>QA Testing</li>
-                </ul>
-              </article>
-              <article class="skill-card">
-                <h3 class="section-subtitle">Content</h3>
-                <ul>
-                  <li>Knowledge Base</li>
-                  <li>FAQ Design</li>
-                  <li>Internal Wikis</li>
-                  <li>Release Notes</li>
-                  <li>Playbooks</li>
-                </ul>
-              </article>
-            </div>
+      <section id="education">
+        <h2 class="section-title">Education</h2>
+        <div class="two-col">
+          <div class="card">
+            <h3>Bachelor of Computer Science</h3>
+            <p>Catholic University of Eastern Africa, Nairobi · 2012</p>
           </div>
-          <aside class="references-panel">
-            <div class="skill-card">
-              <h3 class="section-subtitle">References</h3>
-              <ul>
-                <li>
-                  <strong>George Ndeeri Macharia</strong><br />
-                  Senior Technical Support Specialist, Archetype Themes —
-                  Nairobi, Kenya
-                </li>
-                <li>
-                  <strong>John Weru</strong><br />
-                  Technical Support Specialist, Astoundify — Remote
-                </li>
-              </ul>
-            </div>
-            <div class="skill-card">
-              <h3 class="section-subtitle">Education</h3>
-              <p>
-                BSc Computer Science (2012) — Catholic University of Eastern
-                Africa, Nairobi.
-              </p>
-            </div>
-          </aside>
-        </div>
-      </section>
-
-      <section id="services" class="section">
-        <div class="wrapper">
-          <header class="section-header">
-            <p class="section-subtitle">Services</p>
-            <div class="section-heading">
-              <h2 class="section-title">
-                Services tailored to strengthen support operations end-to-end.
-              </h2>
-              <a
-                class="button button-primary"
-                href="mailto:ndimacharia@gmail.com?subject=Service%20Inquiry"
-                >Book a Discovery Call</a
-              >
-            </div>
-          </header>
-          <div class="services-grid">
-            <article class="service-card">
-              <h3 class="section-title">Technical Support Leadership</h3>
-              <p>
-                Embed proven support frameworks, playbooks, and escalations that
-                keep teams proactive and customers delighted.
-              </p>
-              <span class="chip">Build scalable support operations</span>
-            </article>
-            <article class="service-card">
-              <h3 class="section-title">Knowledge Base &amp; Enablement</h3>
-              <p>
-                Author and optimize help centers, internal wikis, and training
-                modules that empower self-service and rapid onboarding.
-              </p>
-              <span class="chip">Accelerate learning and deflect tickets</span>
-            </article>
-            <article class="service-card">
-              <h3 class="section-title">SaaS Integrations Troubleshooting</h3>
-              <p>
-                Diagnose issues spanning Shopify, WordPress, and third-party
-                apps to restore functionality with minimal downtime.
-              </p>
-              <span class="chip">Protect revenue-critical workflows</span>
-            </article>
-            <article class="service-card">
-              <h3 class="section-title">QA &amp; Release Support</h3>
-              <p>
-                Partner with product teams to test features, document edge
-                cases, and ensure seamless launches across devices.
-              </p>
-              <span class="chip">Ship polished updates faster</span>
-            </article>
+          <div class="card">
+            <h3>References</h3>
+            <p>Available on request.</p>
           </div>
         </div>
       </section>
 
-      <section id="contact" class="section">
-        <div class="wrapper">
-          <div class="contact-banner">
-            <p class="section-subtitle">Let’s collaborate</p>
-            <h2 class="section-title">
-              Need a technical support leader who can translate empathy into
-              operational results?
-            </h2>
-            <p>
-              I’m available for full-time, contract, or fractional engagements
-              supporting North America and EMEA teams. Reach out to explore
-              onboarding, knowledge programs, or launch support tailored to your
-              roadmap.
-            </p>
-            <div class="cta-group">
-              <a
-                class="button button-primary"
-                href="mailto:ndimacharia@gmail.com?subject=Let%E2%80%99s%20work%20together"
-                >Email Nick</a
-              >
-              <div>
-                <strong>Direct Line</strong><br />
-                <a href="tel:+254717291736">+254 717 291 736</a>
-              </div>
-            </div>
-          </div>
+      <section id="contact" class="contact">
+        <h2>Let's talk</h2>
+        <p class="lead">
+          Looking for someone to look after your customers? I'd be glad to
+          hear about your team and how I can help.
+        </p>
+        <div class="actions">
+          <a class="btn btn-primary" href="mailto:ndimacharia@gmail.com">
+            Email me
+          </a>
+          <a
+            class="btn"
+            href="https://cal.com/nicholas-ndirangu-iyfvtv"
+            target="_blank"
+            rel="noopener"
+          >
+            Schedule a call
+          </a>
         </div>
+        <ul class="contact-list">
+          <li>
+            <b>Email</b>
+            <a href="mailto:ndimacharia@gmail.com">ndimacharia@gmail.com</a>
+          </li>
+          <li>
+            <b>Phone</b> <a href="tel:+254717291736">+254 717 291 736</a>
+          </li>
+          <li><b>Location</b> Nairobi, Kenya</li>
+        </ul>
       </section>
     </main>
 
-    <footer class="footer">
-      <div class="wrapper">
-        <div class="footer-top">
-          <h2 class="section-title">
-            Ready to elevate your customer experience?
-          </h2>
-          <p>
-            I help technical teams turn support desks into strategic assets
-            through proactive service design, data-driven insights, and
-            thoughtful enablement.
-          </p>
-          <div class="footer-links">
-            <a class="footer-link" href="mailto:ndimacharia@gmail.com">Email</a>
-            <a
-              class="footer-link"
-              href="https://www.linkedin.com/in/nicholas-ndirangu-macharia-2917409a"
-              target="_blank"
-              rel="noreferrer"
-              >LinkedIn</a
-            >
-            <a
-              class="footer-link"
-              href="https://cal.com/nicholas-ndirangu-iyfvtv"
-              target="_blank"
-              rel="noreferrer"
-              >Schedule a Call</a
-            >
-          </div>
-        </div>
-        <div class="footer-bottom">
-          <span
-            >&copy; <span id="current-year"></span> Nick Ndirangu. All rights
-            reserved.</span
-          >
-          <span
-            >Providing remote-first support leadership across EMEA &amp; North
-            America.</span
-          >
-        </div>
+    <footer>
+      <div class="wrap">
+        © <span id="year">2026</span> Nick Ndirangu Macharia
       </div>
     </footer>
 
-    <script src="https://raw.githubusercontent.com/NickFlicks/nick-portfolio/refs/heads/main/script.js" defer></script>
+    <script>
+      document.getElementById("year").textContent = new Date().getFullYear();
+    </script>
   </body>
 </html>
