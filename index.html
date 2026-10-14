@@ -649,7 +649,7 @@
   .skill-groups {
     margin-top: 12px;
     display: grid;
-    grid-template-columns: repeat(auto-fit, minmax(260px, 1fr));
+    grid-template-columns: repeat(auto-fit, minmax(220px, 1fr));
     gap: 12px;
   }
 
@@ -662,35 +662,6 @@
   }
 
   .skill-group h3 { font-size: 13px; font-weight: bold; margin-bottom: 12px; }
-
-  .skill-group.wide { grid-column: 1 / -1; }
-
-  .tool-rows { list-style: none; margin: 0; padding: 0; display: grid; }
-
-  .tool-row {
-    display: flex;
-    flex-wrap: wrap;
-    align-items: center;
-    gap: 8px 16px;
-    padding: 10px 0;
-    border-top: 1px solid var(--line);
-  }
-
-  .tool-row:first-child { border-top: 0; padding-top: 0; }
-  .tool-name { flex: 0 0 110px; font-size: 13px; font-weight: bold; }
-
-  .where { list-style: none; margin: 0; padding: 0; display: flex; flex-wrap: wrap; gap: 6px; min-width: 0; }
-
-  .where li {
-    font-size: 12px;
-    padding: 3px 10px;
-    border-radius: 999px;
-    background: var(--accent-soft);
-    color: var(--text);
-    border: 1px solid color-mix(in srgb, var(--accent) 45%, transparent);
-  }
-
-  .tool-extra { margin-top: 12px; font-size: 12px; color: var(--subtle); }
 
   .skills.tools li {
     background: var(--accent-soft);
@@ -786,10 +757,6 @@
     outline-offset: 3px;
   }
 
-  @media (max-width: 520px) {
-    .tool-name { flex-basis: 100%; }
-  }
-
   @media (max-width: 640px) {
     .menu a { padding: 8px; }
     .menu a span { display: none; }
@@ -869,16 +836,11 @@
   <section class="skills-section" id="skills" aria-labelledby="skills-title">
     <h2 class="label" id="skills-title">Skills</h2>
     <div class="skill-groups">
-      <div class="skill-group wide">
-        <h3>Support tools, and where I used them</h3>
-        <ul class="tool-rows">
-          <li class="tool-row"><span class="tool-name">Help Scout</span><ul class="where"><li>Troop Themes</li><li>Presidio Creative</li><li>Influx Inc.</li></ul></li>
-          <li class="tool-row"><span class="tool-name">Zendesk</span><ul class="where"><li>Trailblaze Media</li><li>Influx Inc.</li></ul></li>
-          <li class="tool-row"><span class="tool-name">Front</span><ul class="where"><li>Archetype Themes</li></ul></li>
-          <li class="tool-row"><span class="tool-name">Intercom</span><ul class="where"><li>Influx Inc.</li></ul></li>
-          <li class="tool-row"><span class="tool-name">Freshdesk</span><ul class="where"><li>Influx Inc.</li></ul></li>
+      <div class="skill-group">
+        <h3>Support tools</h3>
+        <ul class="skills">
+          <li>Help Scout</li><li>Zendesk</li><li>Front</li><li>Intercom</li><li>Freshdesk</li><li>Jira</li><li>Trello</li>
         </ul>
-        <p class="tool-extra">Also used: Jira and Trello.</p>
       </div>
       <div class="skill-group">
         <h3>Collaboration &amp; documentation</h3>
