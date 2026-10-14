@@ -1,825 +1,1346 @@
 <!doctype html>
 <html lang="en">
-  <head>
-    <meta charset="UTF-8" />
-    <meta name="viewport" content="width=device-width, initial-scale=1" />
-    <link rel="icon" href="favicon.ico" />
-    <title>Nick Ndirangu Macharia | Technical Support Specialist</title>
-    <meta
-      name="description"
-      content="Nick Ndirangu Macharia — Technical & Customer Support Specialist with 7+ years in SaaS, supporting Shopify and WordPress merchants."
-    />
-    <link rel="preconnect" href="https://fonts.googleapis.com" />
-    <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin />
-    <link
-      href="https://fonts.googleapis.com/css2?family=Inter:wght@400;500;600;700&display=swap"
-      rel="stylesheet"
-    />
-
-    <style>
-      :root {
-        --bg: #fafaf9;
-        --surface: #ffffff;
-        --text: #1c1917;
-        --muted: #57534e;
-        --subtle: #a8a29e;
-        --border: #e7e5e4;
-        --accent: #0f766e;
-        --accent-soft: #ccfbf1;
-        --accent-text: #ffffff;
-        --radius: 14px;
-      }
-
-      @media (prefers-color-scheme: dark) {
-        :root {
-          --bg: #0c0a09;
-          --surface: #1c1917;
-          --text: #f5f5f4;
-          --muted: #a8a29e;
-          --subtle: #78716c;
-          --border: #292524;
-          --accent: #2dd4bf;
-          --accent-soft: #134e4a;
-          --accent-text: #042f2e;
-        }
-      }
-
-      * {
-        box-sizing: border-box;
-      }
-
-      html {
-        scroll-behavior: smooth;
-        scroll-padding-top: 5rem;
-      }
-
-      body {
-        margin: 0;
-        font-family:
-          "Inter",
-          system-ui,
-          -apple-system,
-          "Segoe UI",
-          sans-serif;
-        font-size: 16px;
-        line-height: 1.65;
-        color: var(--text);
-        background: var(--bg);
-        -webkit-font-smoothing: antialiased;
-      }
-
-      a {
-        color: inherit;
-      }
-
-      h1,
-      h2,
-      h3 {
-        margin: 0;
-        line-height: 1.2;
-        letter-spacing: -0.02em;
-      }
-
-      p {
-        margin: 0;
-      }
-
-      .wrap {
-        width: min(880px, 100% - 2rem);
-        margin-inline: auto;
-      }
-
-      /* Header */
-      .site-header {
-        position: sticky;
-        top: 0;
-        z-index: 10;
-        background: color-mix(in srgb, var(--bg) 85%, transparent);
-        backdrop-filter: blur(12px);
-        border-bottom: 1px solid var(--border);
-      }
-
-      .site-header .wrap {
-        display: flex;
-        align-items: center;
-        justify-content: space-between;
-        gap: 1rem;
-        height: 4rem;
-      }
-
-      .brand {
-        font-weight: 700;
-        text-decoration: none;
-        white-space: nowrap;
-      }
-
-      .nav {
-        display: flex;
-        gap: 1.5rem;
-        font-size: 0.925rem;
-      }
-
-      .nav a {
-        color: var(--muted);
-        text-decoration: none;
-      }
-
-      .nav a:hover {
-        color: var(--text);
-      }
-
-      @media (max-width: 640px) {
-        .nav a:not(:last-child) {
-          display: none;
-        }
-      }
-
-      /* Buttons */
-      .actions {
-        display: flex;
-        flex-wrap: wrap;
-        gap: 0.75rem;
-      }
-
-      .btn {
-        display: inline-flex;
-        align-items: center;
-        gap: 0.5rem;
-        padding: 0.7rem 1.2rem;
-        border-radius: 999px;
-        font-weight: 600;
-        font-size: 0.95rem;
-        text-decoration: none;
-        border: 1px solid var(--border);
-        background: var(--surface);
-        transition:
-          border-color 0.2s,
-          background 0.2s;
-      }
-
-      .btn:hover {
-        border-color: var(--accent);
-      }
-
-      .btn-primary {
-        background: var(--accent);
-        border-color: var(--accent);
-        color: var(--accent-text);
-      }
-
-      .btn-primary:hover {
-        filter: brightness(1.08);
-      }
-
-      /* Hero */
-      .hero {
-        padding: clamp(3.5rem, 10vw, 6rem) 0 3rem;
-      }
-
-      .eyebrow {
-        display: inline-flex;
-        align-items: center;
-        gap: 0.5rem;
-        font-size: 0.85rem;
-        font-weight: 600;
-        color: var(--accent);
-        margin-bottom: 1rem;
-      }
-
-      .hero h1 {
-        font-size: clamp(2.25rem, 6vw, 3.5rem);
-        font-weight: 700;
-      }
-
-      .hero .role {
-        font-size: clamp(1.15rem, 2.5vw, 1.4rem);
-        color: var(--muted);
-        margin-top: 0.5rem;
-      }
-
-      .hero .lead {
-        max-width: 62ch;
-        margin: 1.5rem 0 2rem;
-        font-size: 1.075rem;
-        color: var(--muted);
-      }
-
-      .stats {
-        display: grid;
-        grid-template-columns: repeat(auto-fit, minmax(160px, 1fr));
-        gap: 1px;
-        margin-top: 3rem;
-        background: var(--border);
-        border: 1px solid var(--border);
-        border-radius: var(--radius);
-        overflow: hidden;
-      }
-
-      .stat {
-        background: var(--surface);
-        padding: 1.25rem 1.25rem;
-      }
-
-      .stat strong {
-        display: block;
-        font-size: 1.6rem;
-        letter-spacing: -0.02em;
-      }
-
-      .stat span {
-        font-size: 0.875rem;
-        color: var(--muted);
-      }
-
-      /* Sections */
-      section {
-        padding: 3.5rem 0;
-        border-top: 1px solid var(--border);
-      }
-
-      .section-title {
-        font-size: 0.8rem;
-        font-weight: 600;
-        text-transform: uppercase;
-        letter-spacing: 0.12em;
-        color: var(--subtle);
-        margin-bottom: 2rem;
-      }
-
-      .about + .about {
-        margin-top: 1rem;
-      }
-
-      .about {
-        max-width: 68ch;
-        font-size: 1.05rem;
-        color: var(--muted);
-      }
-
-      /* Experience timeline */
-      .timeline {
-        position: relative;
-        list-style: none;
-        margin: 0;
-        padding: 0;
-        display: grid;
-        gap: 2rem;
-      }
-
-      .timeline::before {
-        content: "";
-        position: absolute;
-        top: 0.5rem;
-        bottom: 1.25rem;
-        left: 50%;
-        width: 2px;
-        transform: translateX(-50%);
-        background: var(--border);
-      }
-
-      .tl-item {
-        position: relative;
-        display: grid;
-        grid-template-columns: 1fr 3rem 1fr;
-        align-items: start;
-      }
-
-      .tl-dot {
-        grid-column: 2;
-        grid-row: 1;
-        justify-self: center;
-        width: 14px;
-        height: 14px;
-        margin-top: 0.35rem;
-        border-radius: 50%;
-        background: var(--bg);
-        border: 3px solid var(--accent);
-        box-shadow: 0 0 0 4px var(--bg);
-      }
-
-      .tl-item.is-current .tl-dot {
-        background: var(--accent);
-      }
-
-      .tl-date {
-        grid-row: 1;
-        margin: 0 0 0.6rem;
-        font-weight: 600;
-        font-size: 0.95rem;
-        color: var(--accent);
-        font-variant-numeric: tabular-nums;
-      }
-
-      .tl-card {
-        grid-row: 2;
-        padding: 1.25rem 1.4rem;
-        border: 1px solid var(--border);
-        border-radius: var(--radius);
-        background: var(--surface);
-      }
-
-      .tl-item:nth-child(odd) .tl-date,
-      .tl-item:nth-child(odd) .tl-card {
-        grid-column: 3;
-      }
-
-      .tl-item:nth-child(even) .tl-date {
-        grid-column: 1;
-        text-align: right;
-      }
-
-      .tl-item:nth-child(even) .tl-card {
-        grid-column: 1;
-      }
-
-      .tl-card h3 {
-        font-size: 1.05rem;
-        font-weight: 600;
-      }
-
-      .tl-card .company {
-        color: var(--muted);
-        font-size: 0.925rem;
-        margin-top: 0.15rem;
-      }
-
-      .tl-card ul {
-        margin: 0.75rem 0 0;
-        padding-left: 1.1rem;
-        color: var(--muted);
-        font-size: 0.95rem;
-      }
-
-      .tl-card li + li {
-        margin-top: 0.3rem;
-      }
-
-      .tl-card li::marker {
-        color: var(--subtle);
-      }
-
-      .tl-start {
-        position: relative;
-        justify-self: center;
-        padding: 0.4rem 1rem;
-        border-radius: 999px;
-        background: var(--accent-soft);
-        color: var(--text);
-        font-size: 0.875rem;
-        font-weight: 600;
-      }
-
-      @media (min-width: 721px) {
-        .tl-item + .tl-item {
-          margin-top: -5rem;
-        }
-
-        .tl-start {
-          margin-top: 0.5rem;
-        }
-      }
-
-      @media (max-width: 720px) {
-        .timeline::before {
-          left: 7px;
-          transform: none;
-        }
-
-        .tl-item {
-          grid-template-columns: 2.25rem 1fr;
-        }
-
-        .tl-dot {
-          grid-column: 1;
-          justify-self: start;
-        }
-
-        .tl-item:nth-child(n) .tl-date,
-        .tl-item:nth-child(n) .tl-card {
-          grid-column: 2;
-          text-align: left;
-        }
-
-        .tl-start {
-          justify-self: start;
-        }
-      }
-
-      /* Skills */
-      .skills {
-        display: grid;
-        grid-template-columns: repeat(auto-fit, minmax(240px, 1fr));
-        gap: 1.75rem 2rem;
-      }
-
-      .skills h3 {
-        font-size: 1rem;
-        font-weight: 600;
-        margin-bottom: 0.75rem;
-      }
-
-      .tags {
-        display: flex;
-        flex-wrap: wrap;
-        gap: 0.5rem;
-        list-style: none;
-        margin: 0;
-        padding: 0;
-      }
-
-      .tags li {
-        font-size: 0.875rem;
-        padding: 0.3rem 0.75rem;
-        border-radius: 999px;
-        border: 1px solid var(--border);
-        background: var(--surface);
-        color: var(--muted);
-      }
-
-      /* Education */
-      .two-col {
-        display: grid;
-        grid-template-columns: repeat(auto-fit, minmax(240px, 1fr));
-        gap: 1rem;
-      }
-
-      .card {
-        padding: 1.5rem;
-        border: 1px solid var(--border);
-        border-radius: var(--radius);
-        background: var(--surface);
-      }
-
-      .card h3 {
-        font-size: 1rem;
-        font-weight: 600;
-      }
-
-      .card p {
-        color: var(--muted);
-        margin-top: 0.35rem;
-      }
-
-      .card p + p {
-        margin-top: 0.75rem;
-      }
-
-      .card strong {
-        color: var(--text);
-        font-weight: 600;
-      }
-
-      /* Contact */
-      .contact h2 {
-        font-size: clamp(1.75rem, 4vw, 2.25rem);
-        font-weight: 700;
-      }
-
-      .contact .lead {
-        color: var(--muted);
-        max-width: 56ch;
-        margin: 0.75rem 0 1.75rem;
-      }
-
-      .contact-list {
-        list-style: none;
-        margin: 2rem 0 0;
-        padding: 0;
-        display: grid;
-        gap: 0.5rem;
-        color: var(--muted);
-      }
-
-      .contact-list a {
-        text-decoration: none;
-      }
-
-      .contact-list a:hover {
-        color: var(--accent);
-      }
-
-      .contact-list b {
-        display: inline-block;
-        min-width: 5.5rem;
-        font-weight: 500;
-        color: var(--subtle);
-      }
-
-      footer {
-        padding: 2rem 0 3rem;
-        border-top: 1px solid var(--border);
-        font-size: 0.875rem;
-        color: var(--subtle);
-      }
-
-      :focus-visible {
-        outline: 2px solid var(--accent);
-        outline-offset: 3px;
-        border-radius: 6px;
-      }
-    </style>
-  </head>
-  <body>
-    <header class="site-header">
-      <div class="wrap">
-        <a class="brand" href="#top">Nick Macharia</a>
-        <nav class="nav" aria-label="Primary">
-          <a href="#about">About</a>
-          <a href="#experience">Experience</a>
-          <a href="#skills">Skills</a>
-          <a href="#contact">Contact</a>
-        </nav>
-      </div>
-    </header>
-
-    <main id="top" class="wrap">
-      <div class="hero">
-        <p class="eyebrow">Nairobi, Kenya · In support since 2016</p>
-        <h1>Nick Ndirangu Macharia</h1>
-        <p class="role">Technical &amp; Customer Support Specialist</p>
-        <p class="lead">
-          I've worked in customer and technical support since 2016, mostly
-          with Shopify and WordPress products, helping customers over chat,
-          email and phone.
-        </p>
-        <div class="actions">
-          <a class="btn btn-primary" href="mailto:ndimacharia@gmail.com">
-            Get in touch
-          </a>
-          <a
-            class="btn"
-            href="https://www.linkedin.com/in/nicholas-ndirangu-macharia-2917409a/"
-            target="_blank"
-            rel="noopener"
-          >
-            LinkedIn
-          </a>
-        </div>
-
-        <div class="stats">
-          <div class="stat">
-            <strong>Since 2016</strong>
-            <span>in customer &amp; technical support</span>
-          </div>
-          <div class="stat">
-            <strong>40+ tickets</strong>
-            <span>handled per day</span>
-          </div>
-          <div class="stat">
-            <strong>5 companies</strong>
-            <span>Shopify &amp; WordPress products</span>
-          </div>
-          <div class="stat">
-            <strong>3 channels</strong>
-            <span>live chat, email &amp; phone</span>
-          </div>
-        </div>
-      </div>
-
-      <section id="about">
-        <h2 class="section-title">About</h2>
-        <p class="about">
-          My support career started in 2016 at Influx Inc., working on Shopify
-          and WordPress products. Since then I've worked with Presidio
-          Creative, Trailblaze Media, Archetype Themes and Troop Themes. The
-          work has covered live support, account and billing questions,
-          customization and integration issues, bug reporting, release
-          testing, help documentation and training new team members.
-        </p>
-        <p class="about">
-          Day to day I've used Zendesk, Freshdesk, Intercom, Front, Jira and
-          Trello.
-        </p>
-      </section>
-
-      <section id="experience">
-        <h2 class="section-title">Experience</h2>
-        <ol class="timeline">
-          <li class="tl-item is-current">
-            <p class="tl-date">2019 — Present</p>
-            <span class="tl-dot" aria-hidden="true"></span>
-            <article class="tl-card">
-              <h3>Technical Support Engineer &amp; QA</h3>
-              <p class="company">Troop Themes</p>
-              <ul>
-                <li>
-                  Deliver advanced support for Shopify merchants, resolving
-                  complex customization and integration issues.
-                </li>
-                <li>
-                  Handle escalated tickets from Tier 1 agents with accurate,
-                  empathetic solutions.
-                </li>
-                <li>
-                  Partner with development teams on critical issues, reducing
-                  resolution times.
-                </li>
-                <li>
-                  Write customer-facing documentation and self-help guides to
-                  scale support.
-                </li>
-              </ul>
-            </article>
-          </li>
-          <li class="tl-item">
-            <p class="tl-date">2020 — Aug 2025</p>
-            <span class="tl-dot" aria-hidden="true"></span>
-            <article class="tl-card">
-              <h3>Technical Support Specialist</h3>
-              <p class="company">Archetype Themes</p>
-              <ul>
-                <li>
-                  Supported 40+ customer tickets daily via Front and Zendesk,
-                  focused on fast, empathetic communication.
-                </li>
-                <li>
-                  Resolved billing and account inquiries while maintaining high
-                  satisfaction ratings.
-                </li>
-                <li>
-                  Tested products and reported bugs, advocating for
-                  customer-driven improvements.
-                </li>
-                <li>
-                  Trained new support staff and created internal resources for
-                  consistency.
-                </li>
-              </ul>
-            </article>
-          </li>
-          <li class="tl-item is-current">
-            <p class="tl-date">2018 — Present</p>
-            <span class="tl-dot" aria-hidden="true"></span>
-            <article class="tl-card">
-              <h3>Technical Support Specialist</h3>
-              <p class="company">Trailblaze Media</p>
-              <ul>
-                <li>
-                  Work with the development team to identify and report bugs,
-                  ensuring timely fixes and updates.
-                </li>
-                <li>
-                  Create and maintain support documentation, FAQs, and knowledge
-                  base articles for merchants.
-                </li>
-                <li>Run testing and QA checks for new theme releases.</li>
-              </ul>
-            </article>
-          </li>
-          <li class="tl-item">
-            <p class="tl-date">2018 — 2022</p>
-            <span class="tl-dot" aria-hidden="true"></span>
-            <article class="tl-card">
-              <h3>Technical Support Engineer &amp; QA</h3>
-              <p class="company">Presidio Creative · San Francisco</p>
-              <ul>
-                <li>
-                  Escalated and resolved complex merchant issues with the
-                  development team.
-                </li>
-                <li>
-                  Maintained a knowledge base of common issues, solutions, and
-                  internal resources.
-                </li>
-                <li>
-                  Ran compatibility testing across devices and browsers for
-                  consistent, responsive performance.
-                </li>
-              </ul>
-            </article>
-          </li>
-          <li class="tl-item">
-            <p class="tl-date">2016 — 2018</p>
-            <span class="tl-dot" aria-hidden="true"></span>
-            <article class="tl-card">
-              <h3>Customer Support Engineer</h3>
-              <p class="company">Influx Inc. · Melbourne</p>
-              <ul>
-                <li>
-                  Supported Shopify and WordPress products across account,
-                  billing, and technical inquiries.
-                </li>
-                <li>
-                  Escalated high-priority issues to developers, minimizing
-                  disruption for customers.
-                </li>
-                <li>
-                  Created and updated FAQs and knowledge base resources.
-                </li>
-              </ul>
-            </article>
-          </li>
-          <li class="tl-start">2016 · Started in customer support</li>
-        </ol>
-      </section>
-
-      <section id="skills">
-        <h2 class="section-title">Skills &amp; Tools</h2>
-        <div class="skills">
-          <div>
-            <h3>Customer Support</h3>
-            <ul class="tags">
-              <li>High-volume live support</li>
-              <li>Chat, email &amp; phone</li>
-              <li>Escalation management</li>
-              <li>Billing &amp; account inquiries</li>
-              <li>Staff training</li>
-            </ul>
-          </div>
-          <div>
-            <h3>Technical</h3>
-            <ul class="tags">
-              <li>Shopify</li>
-              <li>WordPress</li>
-              <li>Web app &amp; integration troubleshooting</li>
-              <li>HTML &amp; CSS customization</li>
-            </ul>
-          </div>
-          <div>
-            <h3>Tools</h3>
-            <ul class="tags">
-              <li>Zendesk</li>
-              <li>Freshdesk</li>
-              <li>Intercom</li>
-              <li>Front</li>
-              <li>Jira</li>
-              <li>Trello</li>
-            </ul>
-          </div>
-          <div>
-            <h3>Docs &amp; QA</h3>
-            <ul class="tags">
-              <li>Knowledge base articles</li>
-              <li>Self-help guides &amp; FAQs</li>
-              <li>Product testing</li>
-              <li>Bug reporting</li>
-              <li>Cross-browser testing</li>
-            </ul>
-          </div>
-        </div>
-      </section>
-
-      <section id="education">
-        <h2 class="section-title">Education &amp; References</h2>
-        <div class="two-col">
-          <div class="card">
-            <h3>Bachelor of Computer Science</h3>
-            <p>Catholic University of Eastern Africa, Nairobi · 2012</p>
-          </div>
-          <div class="card">
-            <h3>References</h3>
-            <p>
-              <strong>Steve Baker</strong><br />
-              Support Manager, Archetype Themes
-            </p>
-            <p>
-              <strong>John Weru</strong><br />
-              Technical Support Specialist, Astoundify
-            </p>
-          </div>
-        </div>
-      </section>
-
-      <section id="contact" class="contact">
-        <h2>Let's talk</h2>
-        <p class="lead">
-          If you'd like to talk about a support role or work together, email
-          me or book a call.
-        </p>
-        <div class="actions">
-          <a class="btn btn-primary" href="mailto:ndimacharia@gmail.com">
-            Email me
-          </a>
-          <a
-            class="btn"
-            href="https://cal.com/nicholas-ndirangu-iyfvtv"
-            target="_blank"
-            rel="noopener"
-          >
-            Schedule a call
-          </a>
-        </div>
-        <ul class="contact-list">
-          <li>
-            <b>Email</b>
-            <a href="mailto:ndimacharia@gmail.com">ndimacharia@gmail.com</a>
-          </li>
-          <li>
-            <b>Phone</b> <a href="tel:+254717291736">+254 717 291 736</a>
-          </li>
-          <li><b>Location</b> Nairobi, Kenya</li>
+<head>
+<meta charset="UTF-8">
+<meta name="viewport" content="width=device-width, initial-scale=1, viewport-fit=cover">
+<title>Nick Ndirangu | Technical Support Specialist</title>
+<meta name="description" content="Nick Ndirangu, Technical Support Specialist with 10 years of experience in SaaS and technology environments, supporting Shopify and WordPress merchants.">
+<link rel="icon" href="favicon.ico">
+<style>
+  /* Layout: sticky intro + detail panel on the left, vertical role track on the right; one column on phones with details opening inline. */
+  /* Palette matches the portfolio site: warm stone neutrals with a teal accent, in light and dark. */
+  :root {
+    color-scheme: light;
+    --bg: #fafaf9;
+    --surface: #ffffff;
+    --surface-2: #f5f5f4;
+    --line: #e7e5e4;
+    --line-strong: #d6d3d1;
+    --text: #1c1917;
+    --muted: #57534e;
+    --subtle: #8a837d;
+    --accent: #0f766e;
+    --accent-soft: #ccfbf1;
+    --on-accent: #ffffff;
+    --shadow: rgba(28, 25, 23, 0.12);
+
+    --font: Verdana, Geneva, "DejaVu Sans", sans-serif;
+    --radius: 14px;
+  }
+
+  @media (prefers-color-scheme: dark) {
+    :root:not([data-theme="light"]) {
+      --bg: #0c0a09;
+      --surface: #1c1917;
+      --surface-2: #231f1d;
+      --line: #292524;
+      --line-strong: #3a3431;
+      --text: #f5f5f4;
+      --muted: #a8a29e;
+      --subtle: #847c76;
+      --accent: #2dd4bf;
+      --accent-soft: #134e4a;
+      --on-accent: #042f2e;
+      --shadow: rgba(0, 0, 0, 0.5);
+      color-scheme: dark;
+    }
+  }
+
+  :root[data-theme="dark"] {
+    --bg: #0c0a09;
+    --surface: #1c1917;
+    --surface-2: #231f1d;
+    --line: #292524;
+    --line-strong: #3a3431;
+    --text: #f5f5f4;
+    --muted: #a8a29e;
+    --subtle: #847c76;
+    --accent: #2dd4bf;
+    --accent-soft: #134e4a;
+    --on-accent: #042f2e;
+    --shadow: rgba(0, 0, 0, 0.5);
+    color-scheme: dark;
+  }
+
+  * { box-sizing: border-box; }
+  [hidden] { display: none !important; }
+
+  body {
+    margin: 0;
+    background: var(--bg);
+    color: var(--text);
+    font-family: var(--font);
+    font-size: 14px;
+    line-height: 1.65;
+    min-height: 100%;
+  }
+
+  button { font-family: var(--font); }
+
+  .wrap {
+    max-width: 1080px;
+    margin: 0 auto;
+    padding-block: clamp(32px, 6vw, 72px);
+    padding-left: max(16px, env(safe-area-inset-left, 0px));
+    padding-right: max(16px, env(safe-area-inset-right, 0px));
+  }
+
+  .page {
+    display: grid;
+    grid-template-columns: minmax(0, 5fr) minmax(0, 7fr);
+    gap: clamp(28px, 5vw, 56px);
+    align-items: start;
+  }
+
+  h1, h2, h3 { margin: 0; text-wrap: balance; }
+  p { margin: 0; }
+
+  /* Header */
+  .top { display: grid; justify-items: center; gap: 10px; text-align: center; }
+
+  .eyebrow {
+    font-size: 11px;
+    font-weight: bold;
+    letter-spacing: 0.12em;
+    text-transform: uppercase;
+    color: var(--accent);
+    text-wrap: balance;
+  }
+
+  .top h1 {
+    font-size: clamp(26px, 4vw, 36px);
+    font-weight: bold;
+    letter-spacing: -0.02em;
+    line-height: 1.15;
+  }
+
+  .profile {
+    max-width: 66ch;
+    margin-top: 6px;
+    color: var(--muted);
+  }
+
+  /* Controls */
+  .controls {
+    display: flex;
+    flex-wrap: wrap;
+    align-items: center;
+    justify-content: space-between;
+    gap: 14px 20px;
+    margin-block: 28px 36px;
+  }
+
+  .filters { display: flex; flex-wrap: wrap; gap: 8px; }
+
+  .chip {
+    font-size: 12px;
+    line-height: 1;
+    padding: 9px 12px;
+    border-radius: 999px;
+    border: 1px solid var(--line);
+    background: var(--surface);
+    color: var(--muted);
+    cursor: pointer;
+    display: inline-flex;
+    align-items: center;
+    gap: 8px;
+    transition: border-color 0.2s, color 0.2s, background 0.2s;
+  }
+
+  .chip:hover { border-color: var(--accent); color: var(--text); }
+
+  .chip[aria-pressed="true"] {
+    background: var(--accent-soft);
+    border-color: var(--accent);
+    color: var(--text);
+  }
+
+  .chip .count {
+    font-size: 11px;
+    color: var(--subtle);
+    font-variant-numeric: tabular-nums;
+  }
+
+  .chip[aria-pressed="true"] .count { color: var(--accent); }
+
+  .views {
+    display: inline-flex;
+    gap: 2px;
+    padding: 3px;
+    border-radius: 999px;
+    border: 1px solid var(--line);
+    background: var(--surface);
+  }
+
+  .views button {
+    border: 0;
+    background: none;
+    color: var(--muted);
+    font-size: 12px;
+    padding: 8px 14px;
+    border-radius: 999px;
+    cursor: pointer;
+    transition: background 0.2s, color 0.2s;
+  }
+
+  .views button:hover { color: var(--text); }
+
+  .views button[aria-pressed="true"] {
+    background: var(--accent);
+    color: var(--on-accent);
+  }
+
+  .side {
+    position: sticky;
+    top: calc(env(safe-area-inset-top, 0px) + 24px);
+    min-width: 0;
+  }
+
+  /* Detail panel */
+  .panel {
+    padding: 24px;
+    border-radius: var(--radius);
+    background: var(--surface);
+    border: 1px solid var(--line);
+    box-shadow: 0 20px 40px -28px var(--shadow);
+    min-width: 0;
+  }
+
+  .detail { display: grid; gap: 16px; }
+
+  .badge {
+    display: inline-flex;
+    align-items: center;
+    gap: 6px;
+    padding: 4px 10px;
+    border-radius: 999px;
+    border: 1px solid var(--line);
+    background: var(--surface-2);
+    color: var(--muted);
+    font-size: 11.5px;
+  }
+
+  .badge svg { width: 12px; height: 12px; }
+
+  .detail h2 {
+    font-size: 18px;
+    font-weight: bold;
+    line-height: 1.3;
+    margin-top: 10px;
+  }
+
+  .detail .org { color: var(--accent); margin-top: 4px; }
+
+  .meta {
+    display: grid;
+    gap: 6px;
+    font-size: 12.5px;
+    color: var(--muted);
+  }
+
+  .meta span { display: flex; align-items: center; gap: 8px; }
+  .meta svg { width: 14px; height: 14px; color: var(--subtle); flex-shrink: 0; }
+
+  .detail ul.points {
+    margin: 0;
+    padding: 16px 0 0 18px;
+    border-top: 1px solid var(--line);
+    display: grid;
+    gap: 8px;
+    color: var(--muted);
+  }
+
+  .detail ul.points li::marker { color: var(--accent); }
+
+  .label {
+    font-size: 10.5px;
+    font-weight: bold;
+    letter-spacing: 0.12em;
+    text-transform: uppercase;
+    color: var(--subtle);
+    margin-bottom: 8px;
+  }
+
+  .skills { display: flex; flex-wrap: wrap; gap: 6px; list-style: none; margin: 0; padding: 0; }
+
+  .skills li {
+    font-size: 12px;
+    padding: 3px 10px;
+    border-radius: 999px;
+    border: 1px solid var(--line);
+    background: var(--surface-2);
+    color: var(--muted);
+  }
+
+  /* Time-in-role bar: where the role sits between 2016 and today */
+  .span-axis {
+    display: flex;
+    justify-content: space-between;
+    font-size: 10.5px;
+    color: var(--subtle);
+    margin-top: 6px;
+    font-variant-numeric: tabular-nums;
+  }
+
+  .span-track {
+    position: relative;
+    height: 8px;
+    border-radius: 999px;
+    background: var(--surface-2);
+    border: 1px solid var(--line);
+    overflow: hidden;
+  }
+
+  .span-fill {
+    position: absolute;
+    top: 0;
+    bottom: 0;
+    border-radius: 999px;
+    background: var(--accent);
+  }
+
+  /* Right column: track */
+  .track {
+    position: relative;
+    list-style: none;
+    margin: 0 0 0 18px;
+    padding: 4px 0;
+    border-left: 2px solid var(--line);
+    display: grid;
+    gap: 18px;
+    min-width: 0;
+  }
+
+  .item {
+    position: relative;
+    padding-left: 34px;
+    opacity: 0.8;
+    transition: opacity 0.25s;
+  }
+
+  .item:hover, .item.is-active { opacity: 1; }
+
+  .node {
+    position: absolute;
+    left: -18px;
+    top: 18px;
+    width: 34px;
+    height: 34px;
+    border-radius: 50%;
+    display: grid;
+    place-items: center;
+    background: var(--surface);
+    border: 1px solid var(--line-strong);
+    color: var(--muted);
+    box-shadow: 0 0 0 4px var(--bg);
+    transition: background 0.25s, border-color 0.25s, color 0.25s;
+  }
+
+  .node svg { width: 15px; height: 15px; }
+
+  .item.is-active .node {
+    background: var(--accent);
+    border-color: var(--accent);
+    color: var(--on-accent);
+  }
+
+  .card {
+    border-radius: var(--radius);
+    border: 1px solid var(--line);
+    background: var(--surface);
+    transition: border-color 0.25s, box-shadow 0.25s;
+  }
+
+  .item:hover .card { border-color: var(--line-strong); }
+
+  .item.is-active .card {
+    border-color: var(--accent);
+    box-shadow: 0 16px 32px -24px var(--shadow);
+  }
+
+  .card-head {
+    width: 100%;
+    display: flex;
+    justify-content: space-between;
+    align-items: flex-start;
+    gap: 16px;
+    padding: 18px 20px;
+    background: none;
+    border: 0;
+    border-radius: var(--radius);
+    color: inherit;
+    font-size: inherit;
+    text-align: left;
+    cursor: pointer;
+  }
+
+  .period {
+    font-size: 12px;
+    color: var(--subtle);
+    font-variant-numeric: tabular-nums;
+  }
+
+  .role {
+    display: block;
+    font-size: 15px;
+    font-weight: bold;
+    margin-top: 3px;
+    color: var(--text);
+    transition: color 0.25s;
+  }
+
+  .item.is-active .role { color: var(--accent); }
+
+  .company { display: block; font-size: 13px; color: var(--muted); }
+
+  .now {
+    display: inline-block;
+    margin-left: 8px;
+    padding: 1px 8px;
+    border-radius: 999px;
+    font-size: 10px;
+    letter-spacing: 0.06em;
+    text-transform: uppercase;
+    color: var(--accent);
+    border: 1px solid var(--accent);
+    vertical-align: 1px;
+  }
+
+  .chev {
+    width: 16px;
+    height: 16px;
+    margin-top: 4px;
+    flex-shrink: 0;
+    color: var(--subtle);
+    transition: transform 0.25s, color 0.25s;
+  }
+
+  .item:hover .chev { transform: translateX(2px); }
+  .item.is-active .chev { transform: rotate(90deg); color: var(--accent); }
+
+  .inline-detail {
+    display: none;
+    padding: 0 20px 20px;
+  }
+
+  .inline-detail .detail { padding-top: 16px; border-top: 1px solid var(--line); }
+  .inline-detail .detail .head { display: none; }
+
+  .start {
+    position: relative;
+    padding-left: 34px;
+    font-size: 12px;
+    color: var(--muted);
+  }
+
+  .start::before {
+    content: "";
+    position: absolute;
+    left: -6px;
+    top: 50%;
+    width: 10px;
+    height: 10px;
+    border-radius: 50%;
+    background: var(--accent);
+    transform: translateY(-50%);
+    box-shadow: 0 0 0 4px var(--bg);
+  }
+
+  /* Roles inside a company */
+  .roles {
+    list-style: none;
+    margin: 0;
+    padding: 16px 0 0;
+    border-top: 1px solid var(--line);
+    display: grid;
+    gap: 16px;
+  }
+
+  .role-block { padding-left: 14px; border-left: 2px solid var(--line); }
+  .role-block:first-child { border-left-color: var(--accent); }
+  .role-title { font-size: 13.5px; font-weight: bold; }
+
+  .role-meta {
+    margin-top: 2px;
+    font-size: 12px;
+    color: var(--subtle);
+    font-variant-numeric: tabular-nums;
+  }
+
+  .role-points {
+    margin: 8px 0 0;
+    padding-left: 18px;
+    display: grid;
+    gap: 6px;
+    font-size: 13px;
+    color: var(--muted);
+  }
+
+  .role-points li::marker { color: var(--accent); }
+  .vt-card .roles { margin-top: 12px; }
+
+  /* Full vertical timeline */
+  .vt {
+    position: relative;
+    list-style: none;
+    margin: 0;
+    padding: 0;
+    display: grid;
+    gap: 28px;
+  }
+
+  .vt::before {
+    content: "";
+    position: absolute;
+    top: 6px;
+    bottom: 6px;
+    left: 50%;
+    width: 2px;
+    transform: translateX(-50%);
+    background: var(--line);
+  }
+
+  .vt-item {
+    position: relative;
+    display: grid;
+    grid-template-columns: minmax(0, 1fr) 40px minmax(0, 1fr);
+    align-items: start;
+  }
+
+  .vt-dot {
+    grid-column: 2;
+    grid-row: 1;
+    justify-self: center;
+    z-index: 1;
+    width: 34px;
+    height: 34px;
+    border-radius: 50%;
+    display: grid;
+    place-items: center;
+    background: var(--surface);
+    border: 1px solid var(--line-strong);
+    color: var(--muted);
+    box-shadow: 0 0 0 4px var(--bg);
+  }
+
+  .vt-dot svg { width: 15px; height: 15px; }
+
+  .vt-item.is-current .vt-dot {
+    background: var(--accent);
+    border-color: var(--accent);
+    color: var(--on-accent);
+  }
+
+  .vt-date {
+    grid-row: 1;
+    margin-top: 8px;
+    font-size: 13px;
+    font-weight: bold;
+    color: var(--accent);
+    font-variant-numeric: tabular-nums;
+  }
+
+  .vt-card {
+    grid-row: 1;
+    min-width: 0;
+    padding: 20px;
+    border-radius: var(--radius);
+    border: 1px solid var(--line);
+    background: var(--surface);
+  }
+
+  .vt-item:nth-child(odd) .vt-date { grid-column: 1; text-align: right; padding-right: 8px; }
+  .vt-item:nth-child(odd) .vt-card { grid-column: 3; }
+  .vt-item:nth-child(even) .vt-date { grid-column: 3; padding-left: 8px; }
+  .vt-item:nth-child(even) .vt-card { grid-column: 1; }
+
+  .vt-card h3 { font-size: 15px; font-weight: bold; line-height: 1.35; }
+  .vt-card .org { margin-top: 2px; font-size: 13px; color: var(--accent); }
+
+  .vt-card ul.points {
+    margin: 12px 0 0;
+    padding-left: 18px;
+    display: grid;
+    gap: 6px;
+    font-size: 13px;
+    color: var(--muted);
+  }
+
+  .vt-card ul.points li::marker { color: var(--accent); }
+  .vt-card .skills { margin-top: 14px; }
+
+  .vt-start {
+    justify-self: center;
+    position: relative;
+    z-index: 1;
+    padding: 6px 14px;
+    border-radius: 999px;
+    border: 1px solid var(--accent);
+    background: var(--accent-soft);
+    color: var(--text);
+    font-size: 12px;
+  }
+
+  /* Header */
+  .site-header {
+    position: sticky;
+    top: env(safe-area-inset-top, 0px);
+    z-index: 20;
+    background: color-mix(in srgb, var(--bg) 88%, transparent);
+    backdrop-filter: blur(10px);
+    border-bottom: 1px solid var(--line);
+  }
+
+  .bar {
+    max-width: 1080px;
+    height: 56px;
+    margin: 0 auto;
+    display: flex;
+    align-items: center;
+    justify-content: space-between;
+    gap: 16px;
+    padding-left: max(16px, env(safe-area-inset-left, 0px));
+    padding-right: max(16px, env(safe-area-inset-right, 0px));
+  }
+
+  .brand {
+    font-size: 14px;
+    font-weight: bold;
+    color: var(--text);
+    text-decoration: none;
+    white-space: nowrap;
+  }
+
+  .menu { display: flex; align-items: center; gap: 4px; }
+
+  .menu a {
+    display: inline-flex;
+    align-items: center;
+    gap: 8px;
+    padding: 8px 12px;
+    border-radius: 999px;
+    font-size: 13px;
+    color: var(--muted);
+    text-decoration: none;
+    transition: background 0.2s, color 0.2s;
+  }
+
+  .menu a:hover { background: var(--surface-2); color: var(--text); }
+
+  .ic { width: 16px; height: 16px; flex-shrink: 0; }
+
+  .header-links { display: flex; gap: 8px; }
+
+  .icon-btn {
+    width: 36px;
+    height: 36px;
+    display: grid;
+    place-items: center;
+    border-radius: 50%;
+    border: 1px solid var(--line);
+    background: var(--surface);
+    color: var(--muted);
+    transition: border-color 0.2s, color 0.2s;
+  }
+
+  .icon-btn:hover { border-color: var(--accent); color: var(--accent); }
+
+  /* Skills */
+  .skill-groups {
+    margin-top: 12px;
+    display: grid;
+    grid-template-columns: repeat(auto-fit, minmax(260px, 1fr));
+    gap: 12px;
+  }
+
+  .skill-group {
+    min-width: 0;
+    padding: 18px;
+    border-radius: var(--radius);
+    border: 1px solid var(--line);
+    background: var(--surface);
+  }
+
+  .skill-group h3 { font-size: 13px; font-weight: bold; margin-bottom: 12px; }
+
+  .skill-group.wide { grid-column: 1 / -1; }
+
+  .tool-rows { list-style: none; margin: 0; padding: 0; display: grid; }
+
+  .tool-row {
+    display: flex;
+    flex-wrap: wrap;
+    align-items: center;
+    gap: 8px 16px;
+    padding: 10px 0;
+    border-top: 1px solid var(--line);
+  }
+
+  .tool-row:first-child { border-top: 0; padding-top: 0; }
+  .tool-name { flex: 0 0 110px; font-size: 13px; font-weight: bold; }
+
+  .where { list-style: none; margin: 0; padding: 0; display: flex; flex-wrap: wrap; gap: 6px; min-width: 0; }
+
+  .where li {
+    font-size: 12px;
+    padding: 3px 10px;
+    border-radius: 999px;
+    background: var(--accent-soft);
+    color: var(--text);
+    border: 1px solid color-mix(in srgb, var(--accent) 45%, transparent);
+  }
+
+  .tool-extra { margin-top: 12px; font-size: 12px; color: var(--subtle); }
+
+  .skills.tools li {
+    background: var(--accent-soft);
+    color: var(--text);
+    border-color: color-mix(in srgb, var(--accent) 45%, transparent);
+  }
+
+  .vt-card .skills + .skills { margin-top: 8px; }
+
+  /* Footer */
+  .site-footer {
+    max-width: 1080px;
+    margin: 0 auto;
+    padding-block: 8px 40px;
+    padding-left: max(16px, env(safe-area-inset-left, 0px));
+    padding-right: max(16px, env(safe-area-inset-right, 0px));
+    font-size: 12px;
+    color: var(--subtle);
+  }
+
+  /* Contact */
+  .contact-list {
+    list-style: none;
+    margin: 12px 0 0;
+    padding: 0;
+    display: grid;
+    gap: 10px;
+  }
+
+  .contact-list li { display: flex; flex-wrap: wrap; align-items: center; gap: 10px; }
+  .contact-list .ic { color: var(--accent); }
+  .contact-list a { color: var(--accent); text-underline-offset: 3px; }
+  #email-text { user-select: all; }
+
+  .copy {
+    display: inline-flex;
+    align-items: center;
+    gap: 6px;
+    padding: 5px 10px;
+    border-radius: 999px;
+    border: 1px solid var(--line);
+    background: var(--surface);
+    color: var(--muted);
+    font-size: 12px;
+    cursor: pointer;
+  }
+
+  .copy:hover { border-color: var(--accent); color: var(--text); }
+  .copy .ic { width: 13px; height: 13px; color: inherit; }
+
+  /* References */
+  .skills-section, .refs, .contact-section {
+    margin-top: 56px;
+    padding-top: 28px;
+    border-top: 1px solid var(--line);
+  }
+
+  #experience, #skills, #references, #contact { scroll-margin-top: 80px; }
+
+  .ref-list {
+    list-style: none;
+    margin: 12px 0 0;
+    padding: 0;
+    display: grid;
+    grid-template-columns: repeat(auto-fit, minmax(240px, 1fr));
+    gap: 12px;
+  }
+
+  .ref {
+    display: grid;
+    gap: 2px;
+    padding: 16px 18px;
+    border-radius: var(--radius);
+    border: 1px solid var(--line);
+    background: var(--surface);
+  }
+
+  .ref strong { font-size: 14px; }
+  .ref span { font-size: 13px; color: var(--muted); }
+  .refs .note { margin-top: 12px; font-size: 12px; color: var(--subtle); }
+
+  .empty { color: var(--muted); }
+
+  .fade-in { animation: fade 0.3s ease; }
+
+  @keyframes fade {
+    from { opacity: 0.35; transform: translateY(4px); }
+    to { opacity: 1; transform: none; }
+  }
+
+  :focus-visible {
+    outline: 2px solid var(--accent);
+    outline-offset: 3px;
+  }
+
+  @media (max-width: 520px) {
+    .tool-name { flex-basis: 100%; }
+  }
+
+  @media (max-width: 640px) {
+    .menu a { padding: 8px; }
+    .menu a span { display: none; }
+  }
+
+  @media (max-width: 400px) {
+    .brand { display: none; }
+  }
+
+  @media (max-width: 860px) {
+    .page { grid-template-columns: minmax(0, 1fr); }
+    .side { display: none; }
+    .item.is-active .inline-detail { display: block; }
+
+    .vt::before { left: 17px; transform: none; }
+    .vt-item { grid-template-columns: 34px minmax(0, 1fr); column-gap: 14px; row-gap: 8px; }
+    .vt-dot { grid-column: 1; justify-self: start; }
+    .vt-item:nth-child(n) .vt-date { grid-column: 2; grid-row: 1; margin-top: 7px; padding: 0; text-align: left; }
+    .vt-item:nth-child(n) .vt-card { grid-column: 2; grid-row: 2; }
+    .vt-start { justify-self: start; margin-left: 48px; }
+  }
+
+  @media (prefers-reduced-motion: reduce) {
+    *, *::before, *::after { transition: none !important; animation: none !important; }
+  }
+</style>
+</head>
+<body>
+<header class="site-header">
+  <div class="bar">
+    <a class="brand" href="#top">Nick Ndirangu</a>
+    <nav class="menu" aria-label="Sections">
+      <a href="#experience"><svg class="ic" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round" aria-hidden="true"><path d="M16 20V4a2 2 0 0 0-2-2h-4a2 2 0 0 0-2 2v16"/><rect width="20" height="14" x="2" y="6" rx="2"/></svg><span>Experience</span></a>
+      <a href="#skills"><svg class="ic" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round" aria-hidden="true"><rect width="7" height="7" x="3" y="3" rx="1"/><rect width="7" height="7" x="14" y="3" rx="1"/><rect width="7" height="7" x="14" y="14" rx="1"/><rect width="7" height="7" x="3" y="14" rx="1"/></svg><span>Skills</span></a>
+      <a href="#references"><svg class="ic" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round" aria-hidden="true"><path d="M16 21v-2a4 4 0 0 0-4-4H6a4 4 0 0 0-4 4v2"/><circle cx="9" cy="7" r="4"/><path d="M22 21v-2a4 4 0 0 0-3-3.87"/><path d="M16 3.13a4 4 0 0 1 0 7.75"/></svg><span>References</span></a>
+    </nav>
+    <div class="header-links">
+      <a class="icon-btn" href="https://www.linkedin.com/in/nicholas-ndirangu-macharia-2917409a/" target="_blank" rel="noopener" aria-label="LinkedIn profile" title="LinkedIn"><svg class="ic" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round" aria-hidden="true"><path d="M16 8a6 6 0 0 1 6 6v7h-4v-7a2 2 0 0 0-2-2 2 2 0 0 0-2 2v7h-4v-7a6 6 0 0 1 6-6z"/><rect width="4" height="12" x="2" y="9"/><circle cx="4" cy="4" r="2"/></svg></a>
+      <a class="icon-btn" href="mailto:ndimacharia@gmail.com" aria-label="Email ndimacharia@gmail.com" title="ndimacharia@gmail.com"><svg class="ic" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round" aria-hidden="true"><rect width="20" height="16" x="2" y="4" rx="2"/><path d="m22 7-8.97 5.7a1.94 1.94 0 0 1-2.06 0L2 7"/></svg></a>
+    </div>
+  </div>
+</header>
+
+<main class="wrap" id="top">
+  <header class="top">
+    <p class="eyebrow">Nairobi, Kenya · Technical support since 2016</p>
+    <h1>Nick Ndirangu</h1>
+    <p class="profile">
+      Technical Support Specialist with <span id="yrs">10</span> years of
+      experience in SaaS and technology environments, skilled in delivering
+      high-volume live support via chat and email. Adept at resolving
+      time-sensitive issues with empathy, escalating critical cases, and
+      collaborating with cross-functional teams to ensure fast resolution.
+      Experienced with Zendesk, Intercom, Help Scout, and other support tools. Passionate
+      about sports and providing engaging customer experiences in dynamic,
+      fast-paced environments.
+    </p>
+  </header>
+
+  <div class="controls" id="experience">
+    <div class="filters" role="group" aria-label="Filter by job type" id="filters"></div>
+    <div class="views" role="group" aria-label="Choose a view" id="views">
+      <button type="button" data-view="explore" aria-pressed="true">Explore roles</button>
+      <button type="button" data-view="timeline" aria-pressed="false">Full timeline</button>
+    </div>
+  </div>
+
+  <div class="page" id="explore">
+    <aside class="side"><div class="panel" id="panel" aria-live="polite"></div></aside>
+    <section aria-label="Roles">
+      <ol class="track" id="track"></ol>
+    </section>
+  </div>
+
+  <ol class="vt" id="vt" aria-label="Career timeline" hidden></ol>
+
+  <section class="skills-section" id="skills" aria-labelledby="skills-title">
+    <h2 class="label" id="skills-title">Skills</h2>
+    <div class="skill-groups">
+      <div class="skill-group wide">
+        <h3>Support tools, and where I used them</h3>
+        <ul class="tool-rows">
+          <li class="tool-row"><span class="tool-name">Help Scout</span><ul class="where"><li>Troop Themes</li><li>Presidio Creative</li><li>Influx Inc.</li></ul></li>
+          <li class="tool-row"><span class="tool-name">Zendesk</span><ul class="where"><li>Trailblaze Media</li><li>Influx Inc.</li></ul></li>
+          <li class="tool-row"><span class="tool-name">Front</span><ul class="where"><li>Archetype Themes</li></ul></li>
+          <li class="tool-row"><span class="tool-name">Intercom</span><ul class="where"><li>Influx Inc.</li></ul></li>
+          <li class="tool-row"><span class="tool-name">Freshdesk</span><ul class="where"><li>Influx Inc.</li></ul></li>
         </ul>
-      </section>
-    </main>
-
-    <footer>
-      <div class="wrap">
-        © <span id="year">2026</span> Nick Ndirangu Macharia
+        <p class="tool-extra">Also used: Jira and Trello.</p>
       </div>
-    </footer>
+      <div class="skill-group">
+        <h3>Collaboration &amp; documentation</h3>
+        <ul class="skills">
+          <li>Slack</li><li>Notion</li><li>Knowledge base articles</li><li>Self-help guides &amp; FAQs</li>
+        </ul>
+      </div>
+      <div class="skill-group">
+        <h3>Technical support</h3>
+        <ul class="skills">
+          <li>High-volume live support</li><li>Chat &amp; email</li><li>Escalation management</li><li>Billing &amp; account inquiries</li><li>Training new staff</li>
+        </ul>
+      </div>
+      <div class="skill-group">
+        <h3>Technical</h3>
+        <ul class="skills">
+          <li>Shopify</li><li>WordPress</li><li>Web debugging</li><li>Troubleshooting web applications &amp; integrations</li><li>HTML &amp; CSS (basic customization)</li><li>QA &amp; testing (supporting)</li>
+        </ul>
+      </div>
+    </div>
+  </section>
 
-    <script>
-      document.getElementById("year").textContent = new Date().getFullYear();
-    </script>
-  </body>
+  <section class="refs" id="references" aria-labelledby="refs-title">
+    <h2 class="label" id="refs-title">References</h2>
+    <ul class="ref-list">
+      <li class="ref"><strong>Steve Baker</strong><span>Support Manager, Archetype Themes</span></li>
+      <li class="ref"><strong>John Weru</strong><span>Technical Support Specialist, Astoundify</span></li>
+    </ul>
+    <p class="note">Contact details available on request.</p>
+  </section>
+
+  <section class="contact-section" id="contact" aria-labelledby="contact-title">
+    <h2 class="label" id="contact-title">Contact</h2>
+    <ul class="contact-list">
+      <li><svg class="ic" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round" aria-hidden="true"><rect width="20" height="16" x="2" y="4" rx="2"/><path d="m22 7-8.97 5.7a1.94 1.94 0 0 1-2.06 0L2 7"/></svg><span id="email-text">ndimacharia@gmail.com</span>
+        <button type="button" class="copy" id="copy-email" aria-label="Copy email address"><svg class="ic" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round" aria-hidden="true"><rect width="14" height="14" x="8" y="8" rx="2"/><path d="M4 16c-1.1 0-2-.9-2-2V4c0-1.1.9-2 2-2h10c1.1 0 2 .9 2 2"/></svg><span>Copy</span></button></li>
+      <li><svg class="ic" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round" aria-hidden="true"><path d="M16 8a6 6 0 0 1 6 6v7h-4v-7a2 2 0 0 0-2-2 2 2 0 0 0-2 2v7h-4v-7a6 6 0 0 1 6-6z"/><rect width="4" height="12" x="2" y="9"/><circle cx="4" cy="4" r="2"/></svg><a href="https://www.linkedin.com/in/nicholas-ndirangu-macharia-2917409a/" target="_blank" rel="noopener">LinkedIn profile</a></li>
+    </ul>
+  </section>
+</main>
+
+<footer class="site-footer">© <span id="year">2026</span> Nick Ndirangu</footer>
+
+<script>
+  const ICONS = {
+    lead: '<path d="M4 15s1-1 4-1 5 2 8 2 4-1 4-1V3s-1 1-4 1-5-2-8-2-4 1-4 1z"/><line x1="4" x2="4" y1="22" y2="15"/>',
+    specialist: '<path d="M3 11h3a2 2 0 0 1 2 2v3a2 2 0 0 1-2 2H5a2 2 0 0 1-2-2v-5Zm0 0a9 9 0 1 1 18 0m0 0v5a2 2 0 0 1-2 2h-1a2 2 0 0 1-2-2v-3a2 2 0 0 1 2-2h3Z"/><path d="M21 16v2a4 4 0 0 1-4 4h-5"/>',
+    customer: '<path d="M7.9 20A9 9 0 1 0 4 16.1L2 22Z"/>',
+    education: '<path d="M21.42 10.922a1 1 0 0 0-.019-1.838L12.83 5.18a2 2 0 0 0-1.66 0L2.6 9.08a1 1 0 0 0 0 1.832l8.57 3.908a2 2 0 0 0 1.66 0z"/><path d="M22 10v6"/><path d="M6 12.5V16a6 3 0 0 0 12 0v-3.5"/>',
+    calendar: '<path d="M8 2v4"/><path d="M16 2v4"/><rect width="18" height="18" x="3" y="4" rx="2"/><path d="M3 10h18"/>',
+    pin: '<path d="M20 10c0 4.993-5.539 10.193-7.399 11.799a1 1 0 0 1-1.202 0C9.539 20.193 4 14.993 4 10a8 8 0 0 1 16 0"/><circle cx="12" cy="10" r="3"/>',
+    chevron: '<path d="m9 18 6-6-6-6"/>'
+  };
+
+  const svg = (name) =>
+    `<svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round" aria-hidden="true">${ICONS[name]}</svg>`;
+
+  const TYPES = {
+    lead: "Support Lead",
+    specialist: "Support Specialist",
+    customer: "Customer Support",
+    education: "Education"
+  };
+
+  const NOW = new Date().getFullYear() + new Date().getMonth() / 12;
+  const AXIS_START = 2016;
+
+  const MONTHS = ["Jan", "Feb", "Mar", "Apr", "May", "Jun", "Jul", "Aug", "Sep", "Oct", "Nov", "Dec"];
+  const fmt = (d) => `${MONTHS[d.m - 1]} ${d.y}`;
+  const frac = (d) => d.y + (d.m - 1) / 12;
+  const range = (s, e) => `${fmt(s)} — ${e ? fmt(e) : "Present"}`;
+
+  // Length of a stint, counting both the first and last month (as LinkedIn does).
+  function dur(s, e) {
+    const t = new Date();
+    const end = e ?? { y: t.getFullYear(), m: t.getMonth() + 1 };
+    const n = (end.y - s.y) * 12 + (end.m - s.m) + 1;
+    const y = Math.floor(n / 12);
+    const m = n % 12;
+    return [y ? `${y} yr${y > 1 ? "s" : ""}` : "", m ? `${m} mo${m > 1 ? "s" : ""}` : ""].filter(Boolean).join(" ");
+  }
+
+  // Roles are listed newest first inside each company.
+  const resumeData = [
+    {
+      id: "troop",
+      type: "lead",
+      company: "Troop Themes",
+      employment: "Contract",
+      roles: [
+        {
+          title: "Technical Support Lead",
+          start: { y: 2020, m: 1 },
+          end: null,
+          points: [
+            "Promoted to handle tickets escalated from Tier 1 agents, ensuring accurate and empathetic resolutions.",
+            "Partnered with the development team on critical issues and took on QA involvement to reduce resolution times.",
+            "Resolved complex customization and integration issues for Shopify merchants.",
+            "Documented steps to reproduce bugs so developers could act on them quickly."
+          ]
+        },
+        {
+          title: "Technical Support Specialist",
+          start: { y: 2019, m: 3 },
+          end: { y: 2019, m: 12 },
+          points: [
+            "Delivered support for Shopify merchants, resolving customization and integration issues.",
+            "Authored customer-facing documentation and self-help guides to scale support.",
+            "Answered merchant questions about theme setup and customization."
+          ]
+        }
+      ],
+      tools: ["Help Scout"],
+      skills: ["Shopify", "Escalations", "QA", "Integrations", "Documentation"]
+    },
+    {
+      id: "trailblaze",
+      type: "specialist",
+      company: "Trailblaze Media",
+      employment: "Contract",
+      roles: [
+        {
+          title: "Technical Support Specialist",
+          start: { y: 2018, m: 12 },
+          end: null,
+          points: [
+            "Collaborated with the development team to identify and report bugs, ensuring timely fixes and updates.",
+            "Created and updated support documentation, FAQs, and knowledge base articles for merchants.",
+            "Ran testing and QA checks for new theme releases.",
+            "Turned recurring questions into help articles so merchants could find answers without contacting support."
+          ]
+        }
+      ],
+      tools: ["Zendesk"],
+      skills: ["Bug reporting", "Knowledge base", "FAQs", "Release QA"]
+    },
+    {
+      id: "archetype",
+      type: "specialist",
+      company: "Archetype Themes",
+      employment: "Contract",
+      roles: [
+        {
+          title: "Technical Support Specialist",
+          start: { y: 2020, m: 1 },
+          end: { y: 2025, m: 8 },
+          points: [
+            "Supported 40+ customer tickets daily via Front, with a focus on fast, empathetic communication.",
+            "Resolved billing and account inquiries while maintaining high satisfaction ratings.",
+            "Conducted product testing and reported bugs, advocating for customer-driven improvements.",
+            "Trained new support staff and created internal resources to improve consistency."
+          ]
+        }
+      ],
+      tools: ["Front"],
+      skills: ["Billing & accounts", "Bug reporting", "Training"]
+    },
+    {
+      id: "presidio",
+      type: "lead",
+      company: "Presidio Creative",
+      location: "San Francisco Bay Area",
+      roles: [
+        {
+          title: "Technical Support Lead",
+          employment: "Full-time",
+          start: { y: 2020, m: 1 },
+          end: { y: 2022, m: 9 },
+          points: [
+            "Promoted to lead escalations, partnering with developers on complex merchant issues.",
+            "Took on QA responsibilities, including cross-device and cross-browser compatibility testing.",
+            "Kept the knowledge base current with fixes for recurring issues."
+          ]
+        },
+        {
+          title: "Technical Support Agent",
+          start: { y: 2018, m: 11 },
+          end: { y: 2019, m: 12 },
+          points: [
+            "Supported Shopify Plus merchants with theme development, design, and integration issues.",
+            "Maintained the knowledge base, documenting common issues and internal solutions.",
+            "Escalated complex technical issues to the development team."
+          ]
+        }
+      ],
+      tools: ["Help Scout"],
+      skills: ["Shopify Plus", "Escalations", "Knowledge base", "Cross-browser testing", "Device testing"]
+    },
+    {
+      id: "influx",
+      type: "customer",
+      company: "Influx Inc.",
+      location: "Melbourne, Australia",
+      roles: [
+        {
+          title: "Client Captain",
+          start: { y: 2017, m: 1 },
+          end: { y: 2018, m: 11 },
+          points: [
+            "Owned client satisfaction and success as the main point of contact between Influx and assigned clients on the support side.",
+            "Escalated high-priority issues to developers, minimizing disruption for customers."
+          ]
+        },
+        {
+          title: "Customer Support Engineer",
+          start: { y: 2016, m: 1 },
+          end: { y: 2016, m: 12 },
+          points: [
+            "Supported Shopify and WordPress merchants on account, billing, and technical issues.",
+            "Created and updated FAQs and knowledge base resources to empower customers."
+          ]
+        }
+      ],
+      tools: ["Intercom", "Help Scout", "Zendesk", "Freshdesk"],
+      skills: ["Shopify", "WordPress", "Client success", "Billing & accounts", "Escalations", "FAQs"]
+    },
+    {
+      id: "cuea",
+      type: "education",
+      role: "Bachelor of Computer Science",
+      company: "Catholic University of Eastern Africa",
+      location: "Nairobi, Kenya",
+      period: "Graduated 2012",
+      start: 2012,
+      end: 2012,
+      skills: []
+    }
+  ];
+
+  // Work out each company's overall dates from its roles.
+  resumeData.forEach((item) => {
+    if (!item.roles) return;
+    const newest = item.roles[0];
+    const oldest = item.roles[item.roles.length - 1];
+    item.role = newest.title;
+    item.start = frac(oldest.start);
+    item.end = newest.end ? newest.end.y + newest.end.m / 12 : null;
+    item.period = range(oldest.start, newest.end);
+    item.duration = dur(oldest.start, newest.end);
+  });
+
+  const rolePeriod = (r, item) =>
+    [range(r.start, r.end), dur(r.start, r.end), r.employment || item.employment].filter(Boolean).join(" · ");
+
+  const esc = (s) =>
+    String(s).replace(/[&<>"]/g, (c) => ({ "&": "&amp;", "<": "&lt;", ">": "&gt;", '"': "&quot;" })[c]);
+
+  function spanBar(item) {
+    if (item.type === "education") return "";
+    const span = NOW - AXIS_START;
+    const end = item.end ?? NOW;
+    const left = ((item.start - AXIS_START) / span) * 100;
+    const width = ((end - item.start) / span) * 100;
+    return `
+      <div>
+        <p class="label">Time at company · ${esc(item.duration)}</p>
+        <div class="span-track" role="img" aria-label="${esc(item.period)}, shown on a scale from ${AXIS_START} to today">
+          <div class="span-fill" style="left:${left.toFixed(2)}%;width:${width.toFixed(2)}%"></div>
+        </div>
+        <div class="span-axis" aria-hidden="true"><span>${AXIS_START}</span><span>${Math.round((AXIS_START + NOW) / 2)}</span><span>Today</span></div>
+      </div>`;
+  }
+
+  function rolesHTML(item) {
+    if (!item.roles) return "";
+    return `<ol class="roles">${item.roles
+      .map(
+        (r) => `
+      <li class="role-block">
+        <p class="role-title">${esc(r.title)}</p>
+        <p class="role-meta">${esc(rolePeriod(r, item))}</p>
+        <ul class="role-points">${r.points.map((p) => `<li>${esc(p)}</li>`).join("")}</ul>
+      </li>`
+      )
+      .join("")}</ol>`;
+  }
+
+  function detailHTML(item) {
+    const edu = item.type === "education";
+    const meta = [
+      `<span>${svg("calendar")}${esc(item.period)}</span>`,
+      item.location ? `<span>${svg("pin")}${esc(item.location)}</span>` : ""
+    ].join("");
+    const skills = item.skills.length
+      ? `<div><p class="label">Key skills</p><ul class="skills">${item.skills.map((s) => `<li>${esc(s)}</li>`).join("")}</ul></div>`
+      : "";
+    const tools = item.tools?.length
+      ? `<div><p class="label">Support tools</p><ul class="skills tools">${item.tools.map((t) => `<li>${esc(t)}</li>`).join("")}</ul></div>`
+      : "";
+    return `
+      <div class="detail">
+        <div class="head">
+          <span class="badge">${svg(item.type)}${TYPES[item.type]}</span>
+          <h2>${esc(edu ? item.role : item.company)}</h2>
+          ${edu ? `<p class="org">${esc(item.company)}</p>` : ""}
+        </div>
+        <div class="meta">${meta}</div>
+        ${rolesHTML(item)}
+        ${spanBar(item)}
+        ${tools}
+        ${skills}
+      </div>`;
+  }
+
+  const state = { filter: "all", active: resumeData[0].id };
+  const track = document.getElementById("track");
+  const panel = document.getElementById("panel");
+  const filtersEl = document.getElementById("filters");
+
+  function renderFilters() {
+    const options = ["all", ...Object.keys(TYPES)];
+    filtersEl.innerHTML = options
+      .map((key) => {
+        const count = key === "all" ? resumeData.length : resumeData.filter((i) => i.type === key).length;
+        const label = key === "all" ? "All" : TYPES[key];
+        return `<button type="button" class="chip" data-filter="${key}" aria-pressed="${state.filter === key}">${label}<span class="count">${count}</span></button>`;
+      })
+      .join("");
+  }
+
+  function visibleItems() {
+    return resumeData.filter((i) => state.filter === "all" || i.type === state.filter);
+  }
+
+  function renderTrack() {
+    const items = visibleItems();
+    if (!items.some((i) => i.id === state.active)) state.active = items[0]?.id ?? null;
+
+    track.innerHTML = items
+      .map((item) => {
+        const on = item.id === state.active;
+        const current = item.end === null ? '<span class="now">Current</span>' : "";
+        return `
+          <li class="item${on ? " is-active" : ""}" data-id="${item.id}">
+            <span class="node">${svg(item.type)}</span>
+            <div class="card">
+              <button type="button" class="card-head" aria-expanded="${on}" aria-controls="d-${item.id}">
+                <span>
+                  <span class="period">${esc(item.period)}</span>${current}
+                  <span class="role">${esc(item.role)}</span>
+                  <span class="company">${esc(item.company)}${item.roles && item.roles.length > 1 ? ` · ${item.roles.length} roles` : ""}</span>
+                </span>
+                <svg class="chev" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round" aria-hidden="true">${ICONS.chevron}</svg>
+              </button>
+              <div class="inline-detail" id="d-${item.id}">${on ? detailHTML(item) : ""}</div>
+            </div>
+          </li>${item.id === "influx" ? '<li class="start">2016 · Started in technical support</li>' : ""}`;
+      })
+      .join("");
+
+    renderPanel();
+  }
+
+  function renderPanel() {
+    const item = resumeData.find((i) => i.id === state.active);
+    panel.innerHTML = item ? detailHTML(item) : '<p class="empty">No roles in this category.</p>';
+    panel.firstElementChild?.classList.add("fade-in");
+  }
+
+  const exploreEl = document.getElementById("explore");
+  const vt = document.getElementById("vt");
+  const viewsEl = document.getElementById("views");
+  state.view = location.hash === "#timeline" ? "timeline" : "explore";
+
+  function vtCardHTML(item) {
+    if (item.type === "education") {
+      return `<h3>${esc(item.role)}</h3><p class="org">${esc(item.company)} · ${esc(item.location)}</p>`;
+    }
+    const current = item.end === null ? '<span class="now">Current</span>' : "";
+    const org = item.location ? `<p class="org">${esc(item.location)}</p>` : "";
+    const skills = item.skills.length
+      ? `<ul class="skills" aria-label="Key skills">${item.skills.map((k) => `<li>${esc(k)}</li>`).join("")}</ul>`
+      : "";
+    const tools = item.tools?.length
+      ? `<ul class="skills tools" aria-label="Support tools">${item.tools.map((t) => `<li>${esc(t)}</li>`).join("")}</ul>`
+      : "";
+    return `<h3>${esc(item.company)}${current}</h3>${org}${rolesHTML(item)}${tools}${skills}`;
+  }
+
+  function renderVT() {
+    const items = visibleItems();
+    vt.innerHTML = items.length
+      ? items
+          .map(
+            (item) => `
+        <li class="vt-item${item.end === null ? " is-current" : ""}">
+          <p class="vt-date">${esc(item.period)}</p>
+          <span class="vt-dot">${svg(item.type)}</span>
+          <article class="vt-card">${vtCardHTML(item)}</article>
+        </li>${item.id === "influx" ? '<li class="vt-start">2016 · Started in technical support</li>' : ""}`
+          )
+          .join("")
+      : '<li class="empty">No roles in this category.</li>';
+  }
+
+  function renderView() {
+    exploreEl.hidden = state.view !== "explore";
+    vt.hidden = state.view !== "timeline";
+    viewsEl.querySelectorAll("button").forEach((b) =>
+      b.setAttribute("aria-pressed", String(b.dataset.view === state.view))
+    );
+  }
+
+  function renderAll() {
+    renderFilters();
+    renderTrack();
+    renderVT();
+  }
+
+  filtersEl.addEventListener("click", (e) => {
+    const btn = e.target.closest(".chip");
+    if (!btn) return;
+    state.filter = btn.dataset.filter;
+    renderAll();
+  });
+
+  viewsEl.addEventListener("click", (e) => {
+    const btn = e.target.closest("button");
+    if (!btn) return;
+    state.view = btn.dataset.view;
+    renderView();
+  });
+
+  track.addEventListener("click", (e) => {
+    const li = e.target.closest(".item");
+    if (!li || li.dataset.id === state.active) return;
+    state.active = li.dataset.id;
+    renderTrack();
+    track.querySelector(`.item[data-id="${state.active}"] .card-head`)?.focus({ preventScroll: true });
+  });
+
+  document.querySelectorAll('a[href^="#"]').forEach((a) =>
+    a.addEventListener("click", (e) => {
+      const target = document.querySelector(a.getAttribute("href"));
+      if (!target) return;
+      e.preventDefault();
+      const calm = matchMedia("(prefers-reduced-motion: reduce)").matches;
+      target.scrollIntoView({ behavior: calm ? "auto" : "smooth", block: "start" });
+    })
+  );
+
+  const copyBtn = document.getElementById("copy-email");
+  const copyLabel = copyBtn.querySelector("span");
+  copyBtn.addEventListener("click", async () => {
+    try {
+      await navigator.clipboard.writeText("ndimacharia@gmail.com");
+      copyLabel.textContent = "Copied";
+    } catch (err) {
+      const range = document.createRange();
+      range.selectNodeContents(document.getElementById("email-text"));
+      const sel = getSelection();
+      sel.removeAllRanges();
+      sel.addRange(range);
+      copyLabel.textContent = "Selected";
+    }
+    setTimeout(() => (copyLabel.textContent = "Copy"), 2000);
+  });
+
+  document.getElementById("year").textContent = new Date().getFullYear();
+  document.getElementById("yrs").textContent = Math.floor(NOW - AXIS_START);
+  renderAll();
+  renderView();
+</script>
+</body>
 </html>
