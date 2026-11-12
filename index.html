@@ -4,7 +4,7 @@
 <meta charset="UTF-8">
 <meta name="viewport" content="width=device-width, initial-scale=1, viewport-fit=cover">
 <title>Nick Ndirangu | Technical Support Specialist</title>
-<meta name="description" content="Nick Ndirangu, Technical Support Specialist with 10 years of experience in Shopify Themes and Apps.">
+<meta name="description" content="Nick Ndirangu, Technical Support Specialist with 10 years of experience in Shopify Themes and Apps, including AI in support: training an AI assistant and connecting an MCP server to Help Scout.">
 <link rel="icon" type="image/png" href="favicon.png">
 <style>
   /* Layout: sticky intro + detail panel on the left, vertical role track on the right; one column on phones with details opening inline. */
@@ -662,6 +662,7 @@
   }
 
   .skill-group h3 { font-size: 13px; font-weight: bold; margin-bottom: 12px; }
+  .skill-group.wide { grid-column: 1 / -1; }
 
   .skills.tools li {
     background: var(--accent-soft);
@@ -810,7 +811,7 @@
       high-volume live support via chat and email. Effective at resolving
       time-sensitive issues with empathy, escalating critical cases, and
       collaborating with cross-functional teams to ensure fast resolution.
-      Experienced with Zendesk, Intercom, Help Scout, and other support tools. Passionate
+      Experienced with Zendesk, Intercom, Help Scout, and other support tools. Hands-on with AI in support: training an AI assistant on documentation, writing AI-readable content, and connecting an MCP server to Help Scout. Passionate
       about sports and providing engaging customer experiences in dynamic,
       fast-paced environments.
     </p>
@@ -836,6 +837,12 @@
   <section class="skills-section" id="skills" aria-labelledby="skills-title">
     <h2 class="label" id="skills-title">Skills</h2>
     <div class="skill-groups">
+      <div class="skill-group wide">
+        <h3>AI in support</h3>
+        <ul class="skills">
+          <li>AI-assisted support workflows</li><li>MCP integration with Help Scout</li><li>Training an AI assistant (Kapa)</li><li>AI-readable documentation</li><li>Reviewing and improving AI answers</li>
+        </ul>
+      </div>
       <div class="skill-group">
         <h3>Support tools</h3>
         <ul class="skills">
@@ -936,6 +943,9 @@
           start: { y: 2020, m: 1 },
           end: null,
           points: [
+            "Created new AI-driven workflows to help ramp up reviews.",
+            "Set up AI workflows that submit issues to the development team.",
+            "Embedded an MCP (Model Context Protocol) integration with our Help Scout support desk so AI tools can work with support conversations.",
             "Promoted to handle tickets escalated from Tier 1 agents, ensuring accurate and empathetic resolutions.",
             "Partnered with the development team on critical issues and took on QA involvement to reduce resolution times.",
             "Resolved complex customization and integration issues for Shopify merchants.",
@@ -954,7 +964,7 @@
         }
       ],
       tools: ["Help Scout"],
-      skills: ["Shopify", "Escalations", "QA", "Integrations", "Documentation"]
+      skills: ["AI workflows", "MCP", "Shopify", "Escalations", "QA", "Integrations", "Documentation"]
     },
     {
       id: "trailblaze",
@@ -988,6 +998,10 @@
           start: { y: 2020, m: 1 },
           end: { y: 2025, m: 8 },
           points: [
+            "Helped train Kapa, our AI support assistant, to answer customer questions accurately.",
+            "Made sure Kapa fetched the right documentation, and improved the answers it shared with customers.",
+            "Wrote new documentation written to be read by AI tools.",
+            "Reviewed Kapa's answers against the documentation and fixed the content behind wrong or incomplete answers.",
             "Supported 40+ customer tickets daily via Front, with a focus on fast, empathetic communication.",
             "Resolved billing and account inquiries while maintaining high satisfaction ratings.",
             "Conducted product testing and reported bugs, advocating for customer-driven improvements.",
@@ -995,8 +1009,8 @@
           ]
         }
       ],
-      tools: ["Front"],
-      skills: ["Billing & accounts", "Bug reporting", "Training"]
+      tools: ["Front", "Kapa"],
+      skills: ["AI-readable docs", "Billing & accounts", "Bug reporting", "Training"]
     },
     {
       id: "presidio",
